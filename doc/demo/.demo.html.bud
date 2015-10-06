@@ -1,0 +1,26 @@
+"use strict";
+
+var React = require('react'),
+    pkg = require('../../package.json'),
+    fs = require('fs'),
+    nsh = require('node-syntaxhighlighter'),
+    jsx = require('jsx-syntaxhighlighter');
+
+module.exports = {
+    force: true,
+    mode: '444',
+    data: {
+        links: require('../links.json'),
+        pkg: pkg,
+        highlightStyle: nsh.getStyles()[0].sourcePath,
+        src: nsh.highlight(
+            fs.readFileSync(require.resolve('./demo.jsx')).toString(),
+            jsx,
+            {gutter: false}
+        )
+    }
+};
+
+if (!module.parent) {
+    require('coz').render(__filename);
+}

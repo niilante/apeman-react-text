@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: #555;
+    background-color: #FAFAFA;
+}
+
+.playground {
+    display: block;
+    padding: 40px;
+    min-height: 120px;
+
+    background-image: -moz-linear-gradient(45deg, #F0F0F0 25%, transparent 25%),
+    -moz-linear-gradient(-45deg, #F0F0F0 25%, transparent 25%),
+    -moz-linear-gradient(45deg, transparent 75%, #F0F0F0 75%),
+    -moz-linear-gradient(-45deg, transparent 75%, #F0F0F0 75%);
+    background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, #F0F0F0), color-stop(.25, transparent)),
+    -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, #F0F0F0), color-stop(.25, transparent)),
+    -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.75, transparent), color-stop(.75, #F0F0F0)),
+    -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.75, transparent), color-stop(.75, #F0F0F0));
+
+    -moz-background-size: 50px 50px;
+    background-size: 50px 50px;
+    -webkit-background-size: 50px 51px; /* override value for shitty webkit */
+
+    background-position: 0 0, 25px 0, 25px -25px, 0px 25px;
+
+    border: 1px solid #CCC;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1) inset;
+}
+
+.container {
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+header h1 {
+    text-align: center;
+    margin: 8px 0;
+    font-size: 48px;
+}
+
+a:link,
+a:visited {
+    color: #b35600;
+    text-decoration: none;
+}
+
+a:link:hover,
+a:visited:hover {
+    text-decoration: underline;
+}
+
+.demo-src {
+    margin: 0;
+}
+
+body .syntaxhighlighter {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #EEE;
+}
+
+body .syntaxhighlighter .string, .syntaxhighlighter .string a {
+    color: #FF9D43 !important;
+}
+
+body .syntaxhighlighter .keyword {
+    color: #b35600 !important;
+}
