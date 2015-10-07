@@ -29,7 +29,8 @@ export default class ApText extends ApComponent {
         let {props, state} = s;
         var multiline = props.rows > 1;
         if (multiline) {
-            return (<textarea {...props}></textarea>)
+            return (<textarea className="ap-text ap-text-multiple"
+                {...props}></textarea>)
         } else {
             return (
                 <input className="ap-text"

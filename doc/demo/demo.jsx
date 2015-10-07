@@ -5,7 +5,7 @@ var React = require('react'),
     ApText = require('../../lib/ap_text'),
     ApTextStyle = require('../../lib/ap_text_style');
 
-class DemoTexts extends React.Component {
+class Demo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -34,7 +34,7 @@ class DemoTexts extends React.Component {
     window.onload = function () {
 
         React.render(
-            React.createElement(DemoTexts, {}),
+            React.createElement(Demo, {}),
             document.getElementById('demo')
         );
 

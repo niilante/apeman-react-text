@@ -78,7 +78,12 @@ import React from 'react';
 import {ApText, ApTextStyle} from 'apeman-react-text';
 
 var style = <ApTextStyle></ApTextStyle>,
-    element = <ApText></ApText>;
+    element = <ApText name="username"
+                      value="AIUEO"
+                      onChange={ (e) => {
+                           console.log(e.target.value);
+                      }}
+        ></ApText>;
 
 var html = (
     <html>
@@ -98,8 +103,10 @@ var html = (
 Props
 -----
 
-| Name | Default |
-| ---- | ----- |
++ `name`
++ `value`
++ `placeholder`
++ `rows`
 
 <!-- Section from "doc/readme/04.Props.md.hbs" End -->
 

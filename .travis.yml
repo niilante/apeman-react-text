@@ -14,3 +14,6 @@ script:
 - ./ci/test.js
 - ./ci/cover.js
 - ./ci/report.js
+env:
+  global:
+    secure: amjD/JBlA7Oj3VrtuIgY4BtY9FIyb5iiGvFTZ5TMEtu/k4Klq7iha3MZdWWwTNGCD30sPpt7kLIi+uLtdgJKOxRkS8kcvBO+rVH6NPJkycoCxqj/RBio3SXit/D16U2Os854jT7CU2H2Fo6dpMDchjzjSOsPamPbAGUxULsJ9q21iy71DrZUydLDUuxDNZPkpHxM1YdvR15a5IpbdQVS+1h3WdPzLyizJ29v6qauffMwikMB44ly3fi4GRyMNoYRsMMuOIP+RS2kneOZ7JNvVDTbwt/naD+XVF/cxLDLOlp07loTeabdzQ2/oGouweyR2tNUldxCQF+whOVsW73J2n2NjvXwx9FzALWfLkuQF/Mdi+4HyGxEmDFu/yuePhR23leGiEVuP7Sg1PMsC9HMMPF1mRFWpwuTjpzh8Y1T6kHV+xd3J+pklZTO/j8980zyf+Rp7t7z/OIbWohr3++QInNXq5zINiCcpcmY9oVlw9ZHPudzNT6ryhMvJFZy9L1l7cX/wzmg7ic0K4vYxZWF31ViMDHsHdckPlFjkBsyBovEo85nmEdhqFN1qJv+VVXMb9GbnyRDtlX7AD2p9/t9FsNgYXgEkG7a0/nuDBHwKBNNHcCeZKnd7Smtih5RzfEx6fDfixSLhUGWzUhqtbrRC/z2pgO20s7uGPrtRjtCE8I=

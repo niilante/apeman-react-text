@@ -23,15 +23,7 @@ module.exports = apeTmpl.readmeMdBud({
     vars: {
         get props() {
             var ApText = require('./lib/ap_text');
-            var types = ApText.propTypes,
-                defaults = ApText.defaultProps;
-            return Object.keys(types).map(function (name) {
-                var defaultVal = defaults[name] || '';
-                return {
-                    name: name,
-                    default: defaultVal.name || defaultVal
-                }
-            });
+            return Object.keys(ApText.propTypes);
         }
     }
 });
