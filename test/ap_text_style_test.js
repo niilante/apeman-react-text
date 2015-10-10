@@ -4,7 +4,8 @@
  */
 
 var ApTextStyle = require('../lib/ap_text_style.js'),
-    React = require('react');
+    React = require('react'),
+    ReactDOM = require('react-dom/server');
 
 exports.setUp = function (done) {
     done();
@@ -15,7 +16,7 @@ exports.tearDown = function (done) {
 };
 
 exports['ApTextStyle'] = function (test) {
-    var style = React.renderToString(
+    var style = ReactDOM.renderToString(
         React.createElement(ApTextStyle, {})
     );
     console.log(style);

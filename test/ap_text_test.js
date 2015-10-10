@@ -4,6 +4,7 @@
  */
 
 var ApText = require('../lib/ap_text.js'),
+    ReactDOM = require('react-dom/server'),
     React = require('react');
 
 exports.setUp = function (done) {
@@ -15,8 +16,8 @@ exports.tearDown = function (done) {
 };
 
 exports['ApText'] = function (test) {
-    var html = React.renderToString(
-        React.createElement('html',
+    var html = ReactDOM.renderToString(
+        React.createElement('div',
             {},
             React.createElement(ApText, {})
         )

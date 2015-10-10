@@ -1,6 +1,7 @@
 "use strict";
 
 var React = require('react'),
+    ReactDOM = require('react-dom'),
     html = require('apeman-react-html'),
     ApText = require('../../lib/ap_text'),
     ApTextStyle = require('../../lib/ap_text_style');
@@ -12,13 +13,15 @@ class Demo extends React.Component {
             value: 'This if foo'
         };
     }
-    handleChange(e){
+
+    handleChange(e) {
         var s = this;
         s.setState({
             value: e.target.value
         });
     }
-    render () {
+
+    render() {
         var s = this;
         let state = s.state || {};
         return (
@@ -33,12 +36,12 @@ class Demo extends React.Component {
 (function (window) {
     window.onload = function () {
 
-        React.render(
+        ReactDOM.render(
             React.createElement(Demo, {}),
             document.getElementById('demo')
         );
 
-        React.render(
+        ReactDOM.render(
             React.createElement(ApTextStyle, {}),
             document.getElementById('demo-style')
         );
