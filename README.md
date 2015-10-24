@@ -69,7 +69,11 @@ Demo
 
 [Live demo][demo_url] is hosted on GitHub Pages.
 
+[![Demo Image](./doc/images/screenshot.png)][demo_url]
+
 [demo_url]: http://apeman-react-labo.github.io/apeman-react-text/demo/demo.html
+
+
 
 <!-- Section from "doc/readme/02.Demo.md.hbs" End -->
 
@@ -110,10 +114,12 @@ var html = (
 Props
 -----
 
-+ `name`
-+ `value`
-+ `placeholder`
-+ `rows`
+| Name | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+| name | string | '' | Name attribute of input/textarea element. |
+| value | string | '' | Value of text. |
+| placeholder | string | '' | Place holder text. |
+| rows | number | 1 | Number of rows. Textarea will be rendered when greater than 1. |
 
 
 <!-- Section from "doc/readme/04.Props.md.hbs" End -->

@@ -17,15 +17,20 @@ export default class ApTextStyle extends ApStyle {
 ApTextStyle.propTypes = ApStyle.propTypes;
 
 ApTextStyle.defaultProps = {
-    prefix: '',
     data: {
         '.ap-text': {
             'display': 'block',
             'padding': '4px 8px',
             'border': '1px solid #AAA',
-            'margin': '4px'
+            'margin': '4px',
+            'width': '100%',
+            'maxWidth': '480px',
+            'borderRadius': '2px',
+            'boxShadow': '1px 1px 1px rgba(0,0,0,.05) inset'
         },
-        '.ap-text-multiple': {}
+        '.ap-text-multiple': {
+            'overflow': 'auto'
+        }
     }
 };
 

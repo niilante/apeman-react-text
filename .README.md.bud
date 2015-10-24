@@ -21,10 +21,6 @@ module.exports = apeTmpl.readmeMdBud({
     overview: 'doc/overview.md',
     links: require('./doc/links'),
     vars: {
-        get props() {
-            var ApText = require('./lib/ap_text');
-            return Object.keys(ApText.propTypes);
-        }
     }
 });
 
