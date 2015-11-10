@@ -84,21 +84,25 @@ Usage
 ---------
 
 ```jsx
-import React from 'react';
-import {ApText, ApTextStyle} from 'apeman-react-text';
+var React = require('react');
+var apemanReactText = require('apeman-react-text');
 
-var style = <ApTextStyle></ApTextStyle>,
-    element = <ApText name="username"
-                      value="AIUEO"
-                      onChange={ (e) => {
-                           console.log(e.target.value);
-                      }}
-        ></ApText>;
+var ApText = apemanReactText.ApText,
+    ApTextStyle = apemanReactText.ApTextStyle;
 
 var html = (
     <html>
-    <head>{style}</head>
-    <body>{element}</body>
+    <head>
+        <ApTextStyle></ApTextStyle>
+    </head>
+    <body>
+    <ApText name="username"
+            value="AIUEO"
+            onChange={ (e) => {
+                           console.log(e.target.value);
+                      }}
+        ></ApText>
+    </body>
     </html>
 );
 
