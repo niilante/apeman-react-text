@@ -1,23 +1,18 @@
 "use strict";
 
 var React = require('react'),
+    ReactDomServer = require('react-dom/server'),
     pkg = require('../../package.json'),
-    fs = require('fs'),
-    nsh = require('node-syntaxhighlighter'),
-    jsx = require('jsx-syntaxhighlighter');
+    fs = require('fs');
 
 module.exports = {
     force: true,
     mode: '444',
+    tmpl: function (data) {
+        return ReactDomServer.renderToStaticMarkup(data.component);
+    },
     data: {
-        links: require('../links.json'),
-        pkg: pkg,
-        highlightStyle: nsh.getStyles()[0].sourcePath,
-        src: nsh.highlight(
-            fs.readFileSync(require.resolve('./demo.jsx')).toString(),
-            jsx,
-            {gutter: false}
-        )
+        component: require('./demo.html.js')
     }
 };
 

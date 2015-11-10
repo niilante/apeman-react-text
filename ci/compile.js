@@ -13,34 +13,38 @@ var apeTasking = require('ape-tasking'),
     path = require('path'),
     expandglob = require('expandglob'),
     apeCompiling = require('ape-compiling'),
+    fs = require('fs'),
     coz = require('coz');
 
 apeTasking.runTasks('compile', [
     function renderJsX(callback) {
-        async.waterfall([
-            function (callback) {
-                expandglob('lib/jsx/*.jsx', callback);
-            },
-            function (filenames, callback) {
-                async.each(filenames, function (src, callback) {
-                    var dest = path.join('lib', path.basename(src, '.jsx') + '.js');
-                    apeCompiling.compileJsx(
-                        src, dest, {
-                            sourceMaps: 'inline'
-                        },
-                        callback);
-                }, callback);
-            }
-        ], callback);
+        var libDir = __dirname + '/../lib';
+        apeCompiling.compileReactJsx('*.jsx', {
+            cwd: libDir + '/jsx',
+            out: libDir,
+            map: 'inline'
+        }, callback);
     },
     function renderDemo(callback) {
-        apeCompiling.browserifyJsx(
-            'doc/demo/demo.jsx',
-            'doc/demo/demo.js',
-            {
-                debug: true
+        var demoDir = __dirname + '/../doc/demo';
+        async.series([
+            function (callback) {
+                apeCompiling.compileReactJsx('*.jsx', {
+                    cwd: demoDir,
+                    out: demoDir,
+                    map: 'inline'
+                }, callback);
             },
-            callback
-        );
+            function (callback) {
+                coz.render(demoDir + '/.*.bud', callback);
+            },
+            function (callback) {
+                apeCompiling.browserifyJs(
+                    demoDir + '/demo.node.js',
+                    demoDir + '/demo.js',
+                    {},
+                    callback);
+            }
+        ], callback);
     }
 ], true);
