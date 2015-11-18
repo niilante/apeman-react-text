@@ -2,8 +2,9 @@
  * Test case for component.
  * Runs with nodeunit.
  */
+"use strict";
 
-var ApText = require('../lib/ap_text.js'),
+const ApText = require('../lib/ap_text.js'),
     ReactDOM = require('react-dom/server'),
     React = require('react');
 
@@ -16,7 +17,7 @@ exports.tearDown = function (done) {
 };
 
 exports['ApText'] = function (test) {
-    var html = ReactDOM.renderToString(
+    let html = ReactDOM.renderToString(
         React.createElement('div',
             {},
             React.createElement(ApText, {})

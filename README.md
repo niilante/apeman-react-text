@@ -84,13 +84,15 @@ Usage
 ---------
 
 ```jsx
-var React = require('react');
-var apemanReactText = require('apeman-react-text');
+"use strict";
 
-var ApText = apemanReactText.ApText,
+const React = require('react'),
+    apemanReactText = require('apeman-react-text');
+
+const ApText = apemanReactText.ApText,
     ApTextStyle = apemanReactText.ApTextStyle;
 
-var html = (
+let html = (
     <html>
     <head>
         <ApTextStyle></ApTextStyle>
@@ -101,7 +103,7 @@ var html = (
             onChange={ (e) => {
                            console.log(e.target.value);
                       }}
-        ></ApText>
+    ></ApText>
     </body>
     </html>
 );

@@ -2,8 +2,9 @@
  * Test case for component style.
  * Runs with nodeunit.
  */
+"use strict";
 
-var ApTextStyle = require('../lib/ap_text_style.js'),
+const ApTextStyle = require('../lib/ap_text_style.js'),
     React = require('react'),
     ReactDOM = require('react-dom/server');
 
@@ -16,7 +17,7 @@ exports.tearDown = function (done) {
 };
 
 exports['ApTextStyle'] = function (test) {
-    var style = ReactDOM.renderToString(
+    let style = ReactDOM.renderToString(
         React.createElement(ApTextStyle, {})
     );
     console.log(style);

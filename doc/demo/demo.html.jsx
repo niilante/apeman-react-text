@@ -1,6 +1,6 @@
 "use strict";
 
-var React = require('react'),
+const React = require('react'),
     pkg = require('../../package.json'),
     links = require('../links.json'),
     fs = require('fs'),
@@ -10,7 +10,7 @@ var React = require('react'),
     stylesheets = require('apeman-asset-stylesheets'),
     html = require('apeman-react-html');
 
-var Demo = require('./demo.component.js'),
+const Demo = require('./demo.component.js'),
     ApTextStyle = require('../../lib/ap_text_style'),
     ApStyle = style.ApStyle,
     ApHtml = html.ApHtml;
@@ -56,7 +56,7 @@ module.exports = (
             <div className="react-demo-container">
                 <ul>
                     {
-                        Object.keys(links).map(function (key) {
+                        Object.keys(links).map((key) => {
                             var url = links[key];
                             return (
                                 <li key={key}>

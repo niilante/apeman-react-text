@@ -8,15 +8,15 @@
 
 process.chdir(__dirname + '/..');
 
-var apeWatching = require('ape-watching'),
+const apeWatching = require('ape-watching'),
     childProcess = require('child_process');
 
-var timer = null;
+let timer = null;
 apeWatching.watchFiles([
     'lib/**/*.jsx'
-], function (ev, filename) {
+], (ev, filename) => {
     clearTimeout(timer);
-    timer = setTimeout(function () {
+    timer = setTimeout(() => {
         childProcess.fork('ci/compile.js');
     }, 300);
 });

@@ -8,7 +8,7 @@
 
 process.chdir(__dirname + '/..');
 
-var apeTasking = require('ape-tasking'),
+const apeTasking = require('ape-tasking'),
     async = require('async'),
     path = require('path'),
     expandglob = require('expandglob'),
@@ -17,28 +17,28 @@ var apeTasking = require('ape-tasking'),
     coz = require('coz');
 
 apeTasking.runTasks('compile', [
-    function renderJsX(callback) {
-        var libDir = __dirname + '/../lib';
+    (callback) => {
+        let libDir = __dirname + '/../lib';
         apeCompiling.compileReactJsx('*.jsx', {
             cwd: libDir + '/jsx',
             out: libDir,
             map: 'inline'
         }, callback);
     },
-    function renderDemo(callback) {
-        var demoDir = __dirname + '/../doc/demo';
+    (callback) => {
+        let demoDir = __dirname + '/../doc/demo';
         async.series([
-            function (callback) {
+            (callback) => {
                 apeCompiling.compileReactJsx('*.jsx', {
                     cwd: demoDir,
                     out: demoDir,
                     map: 'inline'
                 }, callback);
             },
-            function (callback) {
+            (callback) => {
                 coz.render(demoDir + '/.*.bud', callback);
             },
-            function (callback) {
+            (callback) => {
                 apeCompiling.browserifyJs(
                     demoDir + '/demo.node.js',
                     demoDir + '/demo.js',

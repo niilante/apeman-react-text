@@ -17,7 +17,7 @@ module.exports = React.createClass({
         console.debug(e);
     },
     render: function () {
-        var s = this,
+        let s = this,
             state = s.state;
         return (
             <div>

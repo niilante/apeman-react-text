@@ -5,11 +5,11 @@
 
 "use strict";
 
-var React = require('react'),
+const React = require('react'),
     ApStyle = require('apeman-react-style')['ApStyle'];
 
 /** @lends ApTextStyle */
-var ApTextStyle = React.createClass({
+let ApTextStyle = React.createClass({
     propTypes: ApStyle.propTypes,
     getDefaultProps: function () {
         return {
@@ -31,8 +31,8 @@ var ApTextStyle = React.createClass({
         }
     },
     render: function () {
-        var s = this;
-        return React.createElement(ApStyle, s.props);
+        let s = this;
+        return <ApStyle {...s.props}></ApStyle>
     }
 });
 module.exports = ApTextStyle;

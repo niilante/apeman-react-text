@@ -2,7 +2,6 @@
 
 var React = require('react'),
     ReactDomServer = require('react-dom/server'),
-    pkg = require('../../package.json'),
     fs = require('fs');
 
 module.exports = {
