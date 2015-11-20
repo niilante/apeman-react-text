@@ -3,8 +3,6 @@
 const React = require('react'),
     ReactDOM = require('react-dom');
 
-const style = require('apeman-react-style'),
-    html = require('apeman-react-html');
 const Demo = require('./demo.component.js');
 
 window.React = React;

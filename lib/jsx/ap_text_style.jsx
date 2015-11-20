@@ -31,8 +31,9 @@ let ApTextStyle = React.createClass({
         }
     },
     render: function () {
-        let s = this;
-        return <ApStyle {...s.props}></ApStyle>
+        let s = this,
+            props = s.props;
+        return <ApStyle {...props}>{props.children}</ApStyle>;
     }
 });
 module.exports = ApTextStyle;

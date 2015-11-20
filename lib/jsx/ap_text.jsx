@@ -5,11 +5,11 @@
 
 "use strict";
 
-var React = require('react'),
+const React = require('react'),
     types = React.PropTypes;
 
 /** @lends ApText */
-var ApText = React.createClass({
+const ApText = React.createClass({
 
 
     //--------------------
@@ -37,9 +37,9 @@ var ApText = React.createClass({
     },
 
     render: function() {
-        var s = this;
-        var props = s.props;
-        var multiline = props.rows > 1;
+        let s = this;
+        let props = s.props;
+        let multiline = props.rows > 1;
         if (multiline) {
             return (<textarea className="ap-text ap-text-multiple"
                 {...props}></textarea>)

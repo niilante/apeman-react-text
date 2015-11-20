@@ -6,25 +6,26 @@ const React = require('react'),
     fs = require('fs'),
     apeHighlighting = require('ape-highlighting'),
     highlightJsx = apeHighlighting.highlightJsx,
-    style = require('apeman-react-style'),
-    stylesheets = require('apeman-asset-stylesheets'),
-    html = require('apeman-react-html');
+    stylesheets = require('apeman-asset-stylesheets');
 
 const Demo = require('./demo.component.js'),
     ApTextStyle = require('../../lib/ap_text_style'),
-    ApStyle = style.ApStyle,
-    ApHtml = html.ApHtml;
+    basic = require('apeman-react-basic'),
+    ApStyle = basic.ApStyle,
+    ApHead = basic.ApHead,
+    ApLinks = basic.ApLinks,
+    ApHtml = basic.ApHtml;
+
+const FAVICON_URL = "https://raw.githubusercontent.com/apeman-asset-labo/apeman-asset-images/master/dist/favicon/react-favicon.png";
 
 module.exports = (
     <ApHtml className="react-demo">
-        <head>
-            <meta charSet="UTF-8"/>
-            <title dangerouslySetInnerHTML={{__html:pkg.name + ' Demo'}}></title>
-            <link rel="icon"
-                  href="https://raw.githubusercontent.com/fur-repo/fur-examples/master/example/15-apeman-react-contrib/favicon.png"/>
+        <ApHead charset="UTF-8"
+                title={pkg.name + ' Demo'}
+                icon={FAVICON_URL}>
             <ApStyle data={fs.readFileSync(stylesheets.reactDemo).toString()}></ApStyle>
             <ApTextStyle></ApTextStyle>
-        </head>
+        </ApHead>
         <body>
         <div id="demo-style"></div>
         <header className="react-demo-header">
@@ -54,18 +55,7 @@ module.exports = (
         </main>
         <footer>
             <div className="react-demo-container">
-                <ul>
-                    {
-                        Object.keys(links).map((key) => {
-                            var url = links[key];
-                            return (
-                                <li key={key}>
-                                    <a href={url}>{key}</a>
-                                </li>
-                            )
-                        })
-                    }
-                </ul>
+                <ApLinks links={links}></ApLinks>
             </div>
         </footer>
         <script src="./demo.js"></script>
