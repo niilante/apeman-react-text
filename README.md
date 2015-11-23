@@ -114,11 +114,17 @@ let html = (
 
 <!-- Section from "doc/readme/03.Usage.md.hbs" End -->
 
-<!-- Section from "doc/readme/04.Props.md.hbs" Start -->
+<!-- Section from "doc/readme/04.Components.md.hbs" Start -->
 
-<a name="section-doc-readme-04-props-md"></a>
-Props
+<a name="section-doc-readme-04-components-md"></a>
+Components
 -----
+
+### ApText
+
+Text input component.
+
+**props**
 
 | Name | Type | Default | Description |
 | ---- | ---- | ------- | ----------- |
@@ -127,8 +133,20 @@ Props
 | placeholder | string | '' | Place holder text. |
 | rows | number | 1 | Number of rows. Textarea will be rendered when greater than 1. |
 
+### ApTextStyle
 
-<!-- Section from "doc/readme/04.Props.md.hbs" End -->
+Style for text.
+
+**props**
+
+| Name | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+| scoped | boolean | false | Render as scoped style. |
+| style | object | {} | Style object. |
+| maxWidth |number | 480 | Max width. |
+
+
+<!-- Section from "doc/readme/04.Components.md.hbs" End -->
 
 
 <!-- Sections Start -->
@@ -153,6 +171,5 @@ Links
 + [apeman](https://github.com/apeman-labo/apeman)
 + [apeman-react-labo](https://github.com/apeman-react-labo)
 + [React](https://facebook.github.io/react/)
-+ [Demo of apeman-react-text](http://apeman-demo-labo.github.io/apeman-react-text/demo/demo.html)
 
 <!-- Links End -->
