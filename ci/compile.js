@@ -20,7 +20,7 @@ apeTasking.runTasks('compile', [
     (callback) => {
         let libDir = __dirname + '/../lib';
         apeCompiling.compileReactJsx('*.jsx', {
-            cwd: libDir + '/jsx',
+            cwd: libDir,
             out: libDir,
             map: 'inline'
         }, callback);
@@ -32,7 +32,8 @@ apeTasking.runTasks('compile', [
                 apeCompiling.compileReactJsx('*.jsx', {
                     cwd: demoDir,
                     out: demoDir,
-                    map: 'inline'
+                    map: 'inline',
+                    minified: true
                 }, callback);
             },
             (callback) => {
