@@ -1,20 +1,15 @@
 "use strict";
 
-const React = require('react'),
-    pkg = require('../../package.json'),
-    links = require('../links.json'),
-    fs = require('fs'),
-    apeHighlighting = require('ape-highlighting'),
-    highlightJsx = apeHighlighting.highlightJsx,
-    stylesheets = require('apeman-asset-stylesheets');
+import React from 'react';
+import pkg from '../../package.json';
+import links from '../links.json';
+import fs from 'fs';
+import {highlightJsx} from 'ape-highlighting';
+import stylesheets from 'apeman-asset-stylesheets';
 
-const Demo = require('./demo.component.js'),
-    ApTextStyle = require('../../lib/ap_text_style'),
-    basic = require('apeman-react-basic'),
-    ApStyle = basic.ApStyle,
-    ApHead = basic.ApHead,
-    ApLinks = basic.ApLinks,
-    ApHtml = basic.ApHtml;
+import Demo from './demo.component.js';
+import ApTextStyle from '../../lib/ap_text_style';
+import {ApStyle, ApHead, ApBody, ApLinks, ApHtml, ApFaIconStyle, ApIonIconStyle } from 'apeman-react-basic';
 
 const FAVICON_URL = "https://raw.githubusercontent.com/apeman-asset-labo/apeman-asset-images/master/dist/favicon/react-favicon.png";
 
@@ -24,7 +19,7 @@ module.exports = (
                 title={pkg.name + ' Demo'}
                 icon={FAVICON_URL}>
             <ApStyle data={fs.readFileSync(stylesheets.reactDemo).toString()}></ApStyle>
-            <ApTextStyle></ApTextStyle>
+            <ApTextStyle highlightColor="#b35600"></ApTextStyle>
         </ApHead>
         <body>
         <div id="demo-style"></div>

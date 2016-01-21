@@ -1,22 +1,16 @@
 /**
  * Test case for component.
- * Runs with nodeunit.
+ * Runs with mocha.
  */
 "use strict";
 
 const ApText = require('../lib/ap_text.js'),
     ReactDOM = require('react-dom/server'),
+    assert = require('assert'),
     React = require('react');
 
-exports.setUp = function (done) {
-    done();
-};
 
-exports.tearDown = function (done) {
-    done();
-};
-
-exports['ApText'] = function (test) {
+it('ApText', (done) => {
     let html = ReactDOM.renderToString(
         React.createElement('div',
             {},
@@ -24,7 +18,7 @@ exports['ApText'] = function (test) {
         )
     );
     console.log(html);
-    test.ok(html);
-    test.done();
-};
+    assert.ok(html);
+    done();
+});
 

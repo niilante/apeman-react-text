@@ -1,22 +1,22 @@
 "use strict";
 
-var React = require('react'),
-    ApText = require('../../lib/ap_text');
+import React from 'react';
+import ApText from '../../lib/ap_text';
 
 module.exports = React.createClass({
-    getInitialState: function () {
+    getInitialState() {
         return {
             value: 'This if foo'
         };
     },
-    handleChange: function (e) {
-        var s = this;
+    handleChange(e) {
+        let s = this;
         s.setState({
             value: e.target.value
         });
         console.debug(e);
     },
-    render: function () {
+    render() {
         let s = this,
             state = s.state;
         return (

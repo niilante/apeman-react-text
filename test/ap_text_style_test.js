@@ -1,27 +1,21 @@
 /**
  * Test case for component style.
- * Runs with nodeunit.
+ * Runs with mocha.
  */
 "use strict";
 
 const ApTextStyle = require('../lib/ap_text_style.js'),
+    assert = require('assert'),
     React = require('react'),
     ReactDOM = require('react-dom/server');
 
-exports.setUp = function (done) {
-    done();
-};
 
-exports.tearDown = function (done) {
-    done();
-};
-
-exports['ApTextStyle'] = function (test) {
+it('ApTextStyle', (done) => {
     let style = ReactDOM.renderToString(
         React.createElement(ApTextStyle, {})
     );
     console.log(style);
-    test.ok(style);
-    test.done();
-};
+    assert.ok(style);
+    done();
+});
 

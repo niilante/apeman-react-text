@@ -5,10 +5,8 @@
 
 "use strict";
 
-const React = require('react'),
-    types = React.PropTypes,
-    extend = require('extend'),
-    ApStyle = require('apeman-react-style')['ApStyle'];
+import React, {PropTypes as types} from 'react';
+import {ApStyle} from 'apeman-react-style';
 
 /** @lends ApTextStyle */
 let ApTextStyle = React.createClass({
@@ -16,21 +14,23 @@ let ApTextStyle = React.createClass({
         scoped: types.bool,
         type: types.string,
         style: types.object,
-        maxWidth:types.number
+        highlightColor: types.string,
+        maxWidth: types.number
     },
-    getDefaultProps: function () {
+    getDefaultProps() {
         return {
             scoped: false,
             type: 'text/css',
             style: {},
-            maxWidth: 480
+            maxWidth: 480,
+            highlightColor: ApStyle.DEFAULT_HIGHLIGHT_COLOR
         }
     },
-    render: function () {
+    render() {
         let s = this,
             props = s.props;
 
-        let maxWidth = props.maxWidth;
+        let {highlightColor, maxWidth} = props;
 
         let data = {
                 '.ap-text': {
@@ -41,6 +41,7 @@ let ApTextStyle = React.createClass({
                     width: `100%`,
                     maxWidth: `${maxWidth}px`,
                     borderRadius: `2px`,
+                    outlineColor: `${highlightColor}`,
                     boxShadow: `1px 1px 1px rgba(0,0,0,.05) inset`
                 },
                 '.ap-text-multiple': {
@@ -52,7 +53,7 @@ let ApTextStyle = React.createClass({
             largeMediaData = {};
         return (
             <ApStyle scoped={props.scoped}
-                     data={extend(data, props.style)}
+                     data={Object.assign(data, props.style)}
                      smallMediaData={smallMediaData}
                      mediumMediaData={mediumMediaData}
                      largeMediaData={largeMediaData}

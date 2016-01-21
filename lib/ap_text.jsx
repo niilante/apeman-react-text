@@ -5,8 +5,7 @@
 
 "use strict";
 
-const React = require('react'),
-    types = React.PropTypes;
+import React, {PropTypes as types} from 'react';
 
 /** @lends ApText */
 const ApText = React.createClass({
@@ -23,11 +22,11 @@ const ApText = React.createClass({
     rows: types.number
 },
 
-    getInitialState: function () {
+    getInitialState() {
         return {}
     },
 
-    getDefaultProps: function () {
+    getDefaultProps() {
         return {
             name: '',
             value: '',
