@@ -51,7 +51,7 @@ var ApText = _react2.default.createClass({
     getDefaultProps: function getDefaultProps() {
         return {
             name: '',
-            value: '',
+            value: null,
             placeholder: '',
             rows: 1
         };
@@ -62,10 +62,12 @@ var ApText = _react2.default.createClass({
         var props = s.props;
         var multiline = props.rows > 1;
         if (multiline) {
-            return _react2.default.createElement('textarea', _extends({ className: 'ap-text ap-text-multiple'
+            return _react2.default.createElement('textarea', _extends({ className: 'ap-text ap-text-multiple',
+                value: props.value || null
             }, props));
         } else {
             return _react2.default.createElement('input', _extends({ className: 'ap-text',
+                value: props.value || null,
                 type: 'text' }, props));
         }
     }

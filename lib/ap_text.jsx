@@ -15,12 +15,12 @@ const ApText = React.createClass({
     // Specs
     //--------------------
 
-    propTypes : {
-    name: types.string,
-    value: types.string,
-    placeholder: types.string,
-    rows: types.number
-},
+    propTypes: {
+        name: types.string,
+        value: types.string,
+        placeholder: types.string,
+        rows: types.number
+    },
 
     getInitialState() {
         return {}
@@ -29,24 +29,29 @@ const ApText = React.createClass({
     getDefaultProps() {
         return {
             name: '',
-            value: '',
+            value: null,
             placeholder: '',
             rows: 1
         }
     },
 
-    render: function() {
+    render: function () {
         let s = this;
         let props = s.props;
         let multiline = props.rows > 1;
         if (multiline) {
-            return (<textarea className="ap-text ap-text-multiple"
-                {...props}></textarea>)
+            return (
+                <textarea className="ap-text ap-text-multiple"
+                          value={props.value || null}
+                    {...props}>
+                </textarea>
+            );
         } else {
             return (
                 <input className="ap-text"
+                       value={props.value || null}
                        type="text" {...props} />
-            )
+            );
         }
     }
 
