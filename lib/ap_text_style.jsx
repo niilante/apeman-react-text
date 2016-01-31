@@ -37,13 +37,20 @@ let ApTextStyle = React.createClass({
                     display: `block`,
                     padding: `4px 8px`,
                     border: `1px solid #AAA`,
-                    margin: `4px`,
                     width: `100%`,
                     maxWidth: `${maxWidth}px`,
-                    verticalAlign: `middle`,
                     borderRadius: `2px`,
+                    boxSizing:`border-box`,
                     outlineColor: `${highlightColor}`,
                     boxShadow: `1px 1px 1px rgba(0,0,0,.05) inset`
+                },
+                '.ap-text-wrap': {
+                    position: `relative`,
+                    width: `100%`,
+                    margin: `4px`,
+                    verticalAlign: `middle`,
+                    maxWidth: `${maxWidth}px`,
+                    display: `block`
                 },
                 '.ap-text-multiple': {
                     overflow: `auto`

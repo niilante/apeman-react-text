@@ -6,6 +6,7 @@
 "use strict";
 
 import React, {PropTypes as types} from 'react';
+import classnames from 'classnames';
 
 /** @lends ApText */
 const ApText = React.createClass({
@@ -37,22 +38,39 @@ const ApText = React.createClass({
 
     render: function () {
         let s = this;
-        let props = s.props;
+        let {props} = s,
+            hasVal = !!props.value;
+
         let multiline = props.rows > 1;
-        if (multiline) {
-            return (
-                <textarea className="ap-text ap-text-multiple"
-                          value={props.value || null}
-                    {...props}>
+        return (
+            <span className={classnames('ap-text-wrap', {
+                'ap-text-wrap-empty': !hasVal
+            }, props.className)}>
+                {
+                    multiline ? s._renderTextArea() : s._renderTextInput()
+                }
+            </span>
+        );
+    },
+
+    _renderTextArea(){
+        let s = this,
+            {props} = s;
+        return (
+            <textarea className="ap-text ap-text-multiple"
+                      value={props.value || null}
+                {...props}>
                 </textarea>
-            );
-        } else {
-            return (
-                <input className="ap-text"
-                       value={props.value || null}
-                       type="text" {...props} />
-            );
-        }
+        );
+    },
+    _renderTextInput(){
+        let s = this,
+            {props} = s;
+        return (
+            <input className="ap-text"
+                   value={props.value || null}
+                   type="text" {...props} />
+        );
     }
 
 });
