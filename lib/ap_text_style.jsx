@@ -40,6 +40,7 @@ let ApTextStyle = React.createClass({
                     margin: `4px`,
                     width: `100%`,
                     maxWidth: `${maxWidth}px`,
+                    verticalAlign: `middle`,
                     borderRadius: `2px`,
                     outlineColor: `${highlightColor}`,
                     boxShadow: `1px 1px 1px rgba(0,0,0,.05) inset`
