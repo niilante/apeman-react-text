@@ -45,7 +45,7 @@ const ApText = React.createClass({
         return (
             <span className={classnames('ap-text-wrap', {
                 'ap-text-wrap-empty': !hasVal
-            }, props.className)}>
+            })}>
                 {
                     multiline ? s._renderTextArea() : s._renderTextInput()
                 }

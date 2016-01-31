@@ -71,7 +71,7 @@ var ApText = _react2.default.createClass({
             'span',
             { className: (0, _classnames2.default)('ap-text-wrap', {
                     'ap-text-wrap-empty': !hasVal
-                }, props.className) },
+                }) },
             multiline ? s._renderTextArea() : s._renderTextInput()
         );
     },
