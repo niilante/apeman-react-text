@@ -80,7 +80,7 @@ var ApText = _react2.default.createClass({
         var s = this;
         var props = s.props;
 
-        return _react2.default.createElement('textarea', _extends({ className: 'ap-text ap-text-multiple',
+        return _react2.default.createElement('textarea', _extends({ className: (0, _classnames2.default)('ap-text ap-text-multiple', props.className),
             value: props.value || null
         }, props));
     },
@@ -88,9 +88,10 @@ var ApText = _react2.default.createClass({
         var s = this;
         var props = s.props;
 
-        return _react2.default.createElement('input', _extends({ className: 'ap-text',
+        return _react2.default.createElement('input', _extends({ className: (0, _classnames2.default)('ap-text', props.className),
             value: props.value || null,
-            type: 'text' }, props));
+            type: 'text'
+        }, props));
     }
 });
 

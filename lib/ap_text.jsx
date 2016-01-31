@@ -57,7 +57,7 @@ const ApText = React.createClass({
         let s = this,
             {props} = s;
         return (
-            <textarea className="ap-text ap-text-multiple"
+            <textarea className={classnames('ap-text ap-text-multiple', props.className)}
                       value={props.value || null}
                 {...props}>
                 </textarea>
@@ -67,9 +67,10 @@ const ApText = React.createClass({
         let s = this,
             {props} = s;
         return (
-            <input className="ap-text"
+            <input className={classnames('ap-text', props.className)}
                    value={props.value || null}
-                   type="text" {...props} />
+                   type="text"
+                {...props} />
         );
     }
 
