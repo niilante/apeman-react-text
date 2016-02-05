@@ -22,7 +22,7 @@ let ApTextStyle = React.createClass({
             scoped: false,
             type: 'text/css',
             style: {},
-            maxWidth: 480,
+            maxWidth: ApStyle.CONTENT_WIDTH,
             highlightColor: ApStyle.DEFAULT_HIGHLIGHT_COLOR
         }
     },

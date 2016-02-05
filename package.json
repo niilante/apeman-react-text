@@ -1,6 +1,6 @@
 {
   "name": "apeman-react-text",
-  "version": "1.2.8",
+  "version": "1.2.9",
   "description": "apeman react package for text component.",
   "main": "lib",
   "scripts": {
@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/apeman-react-labo/apeman-react-text#readme",
   "dependencies": {
-    "apeman-react-style": "^2.4.1",
+    "apeman-react-style": "^2.6.1",
     "argx": "^1.3.1",
     "async": "^1.5.2",
     "classnames": "^2.2.3"
