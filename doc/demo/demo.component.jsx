@@ -20,12 +20,13 @@ module.exports = React.createClass({
             state = s.state;
         return (
             <div>
-                <ApText onChange={s.handleChange} value={state.value} />
-                <ApText onChange={s.handleChange} value={state.value} rows={2} />
+                <ApText onChange={s.handleChange} value={state.value}/>
+                <ApText onChange={s.handleChange} value={state.value} rows={2}/>
                 <ApText onChange={s.handleChange} value={state.value}
-                candidates={[
+                        candidates={[
                 'banana',
-                'orange'
+                'orange',
+                'apple'
                 ]}/>
             </div>
         );

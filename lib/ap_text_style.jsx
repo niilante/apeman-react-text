@@ -61,11 +61,10 @@ let ApTextStyle = React.createClass({
                     right: `1px`,
                     top: `100%`,
                     zIndex: 4,
-                    padding: 0,
-                    margin: 0,
+                    padding: `4px 0`,
+                    margin: `0 1px`,
                     boxShadow: `1px 1px 2px rgba(0,0,0,0.33)`,
                     background: `white`,
-                    border: `1px solid #EEE`,
                     boxSizing: `border-box`
                 },
                 '.ap-text-candidate-list-item': {
@@ -83,6 +82,15 @@ let ApTextStyle = React.createClass({
                 },
                 '.ap-text-candidate-list-item a:active': {
                     background: `#F5F5F5`
+                },
+                '.ap-text-candidate-list-item-selected a': {
+                    background: ApStyle.colorAlpha(highlightColor, 0.33)
+                },
+                '.ap-text-candidate-list-item-selected a:hover': {
+                    background: ApStyle.colorAlpha(highlightColor, 0.5)
+                },
+                '.ap-text-candidate-list-item-selected a:active': {
+                    background: ApStyle.colorAlpha(highlightColor, 0.2)
                 }
             },
             smallMediaData = {},
