@@ -6,7 +6,7 @@ import ApText from '../../lib/ap_text';
 module.exports = React.createClass({
     getInitialState() {
         return {
-            value: 'This if foo'
+            value: 'ban'
         };
     },
     handleChange(e) {
@@ -14,15 +14,19 @@ module.exports = React.createClass({
         s.setState({
             value: e.target.value
         });
-        console.debug(e);
     },
     render() {
         let s = this,
             state = s.state;
         return (
             <div>
-                <ApText onChange={s.handleChange} value={state.value}></ApText>
-                <ApText onChange={s.handleChange} value={state.value} rows={2}></ApText>
+                <ApText onChange={s.handleChange} value={state.value} />
+                <ApText onChange={s.handleChange} value={state.value} rows={2} />
+                <ApText onChange={s.handleChange} value={state.value}
+                candidates={[
+                'banana',
+                'orange'
+                ]}/>
             </div>
         );
     }

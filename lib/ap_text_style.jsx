@@ -40,7 +40,7 @@ let ApTextStyle = React.createClass({
                     width: `100%`,
                     maxWidth: `${maxWidth}px`,
                     borderRadius: `2px`,
-                    boxSizing:`border-box`,
+                    boxSizing: `border-box`,
                     outlineColor: `${highlightColor}`,
                     boxShadow: `1px 1px 1px rgba(0,0,0,.05) inset`
                 },
@@ -54,6 +54,35 @@ let ApTextStyle = React.createClass({
                 },
                 '.ap-text-multiple': {
                     overflow: `auto`
+                },
+                '.ap-text-candidate-list': {
+                    position: `absolute`,
+                    left: 0,
+                    right: `1px`,
+                    top: `100%`,
+                    zIndex: 4,
+                    padding: 0,
+                    margin: 0,
+                    boxShadow: `1px 1px 2px rgba(0,0,0,0.33)`,
+                    background: `white`,
+                    border: `1px solid #EEE`,
+                    boxSizing: `border-box`
+                },
+                '.ap-text-candidate-list-item': {
+                    display: `block`,
+                    padding: 0,
+                    margin: 0
+                },
+                '.ap-text-candidate-list-item a': {
+                    display: `block`,
+                    padding: `4px 8px`
+                },
+                '.ap-text-candidate-list-item a:hover': {
+                    cursor: `pointer`,
+                    background: `#FAFAFA`
+                },
+                '.ap-text-candidate-list-item a:active': {
+                    background: `#F5F5F5`
                 }
             },
             smallMediaData = {},

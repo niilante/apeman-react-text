@@ -43,7 +43,7 @@ apeTasking.runTasks('compile', [
                 apeCompiling.browserifyJs(
                     demoDir + '/demo.node.js',
                     demoDir + '/demo.js',
-                    {},
+                    {debug: true},
                     callback);
             }
         ], callback);
