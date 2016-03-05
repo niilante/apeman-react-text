@@ -1,6 +1,6 @@
 {
   "name": "apeman-react-text",
-  "version": "1.2.12",
+  "version": "1.2.13",
   "description": "apeman react package for text component.",
   "main": "lib",
   "scripts": {
@@ -41,6 +41,7 @@
     "ape-tmpl": "^2.0.9",
     "ape-updating": "^2.0.3",
     "ape-watching": "^2.0.0",
+    "apeman-asset-javascripts": "^1.0.1",
     "apeman-asset-stylesheets": "^1.0.5",
     "apeman-react-basic": "^2.21.0",
     "babel-preset-es2015": "^6.3.13",

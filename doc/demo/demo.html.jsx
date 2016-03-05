@@ -16,10 +16,14 @@ const FAVICON_URL = "https://raw.githubusercontent.com/apeman-asset-labo/apeman-
 module.exports = (
     <ApHtml className="react-demo">
         <ApHead charset="UTF-8"
+                js={[
+                    './demo.external.cc.js',
+                    './demo.js'
+                ]}
                 title={pkg.name + ' Demo'}
                 icon={FAVICON_URL}>
-            <ApStyle data={fs.readFileSync(stylesheets.reactDemo).toString()}></ApStyle>
-            <ApTextStyle highlightColor="#b35600"></ApTextStyle>
+            <ApStyle data={fs.readFileSync(stylesheets.reactDemo).toString()} />
+            <ApTextStyle highlightColor="#b35600" />
         </ApHead>
         <body>
         <div id="demo-style"></div>
@@ -53,7 +57,6 @@ module.exports = (
                 <ApLinks links={links}></ApLinks>
             </div>
         </footer>
-        <script src="./demo.js"></script>
         </body>
     </ApHtml>
 );

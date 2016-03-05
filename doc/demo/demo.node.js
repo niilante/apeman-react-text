@@ -5,7 +5,8 @@ const React = require('react'),
 
 const Demo = require('./demo.component.js');
 
-window.React = React;
-
-let DemoFactory = React.createFactory(Demo);
-ReactDOM.render(DemoFactory(), document.getElementById('demo-wrap'));
+window.addEventListener('load', function onLoad() {
+    window.React = React;
+    let DemoFactory = React.createFactory(Demo);
+    ReactDOM.render(DemoFactory(), document.getElementById('demo-wrap'));
+});

@@ -13,6 +13,7 @@ const apeTasking = require('ape-tasking'),
     path = require('path'),
     expandglob = require('expandglob'),
     apeCompiling = require('ape-compiling'),
+    filecopy = require('filecopy'),
     fs = require('fs'),
     coz = require('coz');
 
@@ -43,8 +44,18 @@ apeTasking.runTasks('compile', [
                 apeCompiling.browserifyJs(
                     demoDir + '/demo.node.js',
                     demoDir + '/demo.js',
-                    {debug: true},
+                    {
+                        debug: true,
+                        external: require('apeman-asset-javascripts/src/demo.external.json')
+                    },
                     callback);
+            },
+            (callback) => {
+                filecopy(
+                    require.resolve('apeman-asset-javascripts/dist/demo.external.cc.js'),
+                    demoDir + '/demo.external.cc.js',
+                    callback
+                )
             }
         ], callback);
     }
