@@ -4,16 +4,16 @@
  * Deploy docs.
  */
 
-"use strict";
+'use strict'
 
-process.chdir(__dirname + '/..');
+process.chdir(`${__dirname}/..`)
 
-const apeTasking = require('ape-tasking'),
-    apeDeploying = require('ape-deploying');
+const apeTasking = require('ape-tasking')
+const apeDeploying = require('ape-deploying')
 
 apeTasking.runTasks('deploy', [
-    (callback) => {
-        apeDeploying.deployGhPages("doc", callback);
-    }
-], true);
+  (callback) => {
+    apeDeploying.deployGhPages("doc", callback)
+  }
+], true)
 

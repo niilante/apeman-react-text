@@ -1,20 +1,19 @@
-"use strict";
+'use strict'
 
-var React = require('react'),
-    ReactDomServer = require('react-dom/server'),
-    fs = require('fs');
+const React = require('react')
+const ReactDomServer = require('react-dom/server')
 
 module.exports = {
-    force: true,
-    mode: '444',
-    tmpl: function (data) {
-        return ReactDomServer.renderToStaticMarkup(data.component);
-    },
-    data: {
-        component: require('./demo.html.js')
-    }
-};
+  force: true,
+  mode: '444',
+  tmpl (data) {
+    return ReactDomServer.renderToStaticMarkup(data.component)
+  },
+  data: {
+    component: require('./demo.html.js')
+  }
+}
 
 if (!module.parent) {
-    require('coz').render(__filename);
+  require('coz').render(__filename)
 }

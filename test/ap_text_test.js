@@ -2,23 +2,23 @@
  * Test case for component.
  * Runs with mocha.
  */
-"use strict";
+'use strict'
 
-const ApText = require('../lib/ap_text.js'),
-    ReactDOM = require('react-dom/server'),
-    assert = require('assert'),
-    React = require('react');
-
+const ApText = require('../lib/ap_text.js')
+const ReactDOM = require('react-dom/server')
+const assert = require('assert')
+const React = require('react')
 
 it('ApText', (done) => {
-    let html = ReactDOM.renderToString(
-        React.createElement('div',
-            {},
-            React.createElement(ApText, {})
-        )
-    );
-    console.log(html);
-    assert.ok(html);
-    done();
-});
+  let html = ReactDOM.renderToString(
+    React.createElement('div',
+      {},
+      React.createElement(ApText, {})
+    )
+  )
+  console.log(html)
+  assert.ok(html)
+  done()
+})
 
+/* global it */

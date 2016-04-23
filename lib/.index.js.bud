@@ -2,21 +2,21 @@
  * Bud file for index.js
  */
 
-"use strict";
+'use strict'
 
-const apeTmpl = require('ape-tmpl'),
-    pkg = require('../package.json');
+const apeTmpl = require('ape-tmpl')
+const pkg = require('../package.json')
 
 module.exports = apeTmpl.indexJsBud({
-    module: pkg.name,
-    desc: pkg.description,
-    dirname: __dirname,
-    subclasses: [
-        'ApText',
-        'ApTextStyle'
-    ]
-});
+  module: pkg.name,
+  desc: pkg.description,
+  dirname: __dirname,
+  subclasses: [
+    'ApText',
+    'ApTextStyle'
+  ]
+})
 
 if (!module.parent) {
-    require('coz').render(__filename);
+  require('coz').render(__filename)
 }
