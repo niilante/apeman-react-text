@@ -1,6 +1,6 @@
 {
   "name": "apeman-react-text",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "apeman react package for text component.",
   "main": "lib",
   "scripts": {
@@ -24,42 +24,38 @@
   },
   "homepage": "https://github.com/apeman-react-labo/apeman-react-text#readme",
   "dependencies": {
-    "apeman-react-style": "^3.0.0",
-    "async": "^1.5.2",
-    "classnames": "^2.2.3"
+    "apeman-react-style": "^3.0.1",
+    "classnames": "^2.2.4"
   },
   "devDependencies": {
-    "ape-compiling": "^3.4.0",
-    "ape-covering": "^2.0.2",
-    "ape-deploying": "^3.0.0",
+    "ape-compiling": "^4.0.0",
+    "ape-covering": "^3.0.0",
+    "ape-deploying": "^4.0.0",
     "ape-doc": "^1.1.3",
-    "ape-highlighting": "^2.0.1",
-    "ape-releasing": "^2.0.1",
-    "ape-reporting": "^2.0.3",
-    "ape-tasking": "^2.0.2",
-    "ape-testing": "^2.0.1",
-    "ape-tmpl": "^4.0.4",
-    "ape-updating": "^2.0.4",
-    "ape-watching": "^2.1.0",
+    "ape-releasing": "^3.0.8",
+    "ape-reporting": "^3.0.0",
+    "ape-tasking": "^3.1.2",
+    "ape-testing": "^3.0.1",
+    "ape-tmpl": "^5.0.1",
+    "ape-updating": "^3.0.2",
+    "ape-watching": "^2.1.1",
     "apeman-asset-javascripts": "^2.2.0",
-    "apeman-asset-stylesheets": "^1.0.5",
-    "apeman-react-basic": "^5.0.13",
-    "argx": "^2.0.2",
+    "apeman-react-demo": "^1.0.6",
     "babel-preset-es2015": "^6.6.0",
     "babel-preset-react": "^6.5.0",
-    "coz": "^4.0.4",
-    "expandglob": "^2.0.0",
-    "filecopy": "^1.0.8",
+    "coz": "^5.0.3",
+    "expandglob": "^3.0.1",
+    "filecopy": "^2.0.0",
     "injectmock": "^1.1.3",
-    "react": "^15.0.1",
-    "react-dom": "^15.0.1",
-    "sharegit": "^1.0.2"
+    "react": "^15.0.2",
+    "react-dom": "^15.0.2"
   },
   "peerDependencies": {
-    "react": ">=15.0.1",
-    "react-dom": ">=15.0.1"
+    "react": ">=15",
+    "react-dom": ">=15"
   },
   "engines": {
-    "node": ">=4.0.0"
+    "node": ">=6",
+    "npm": ">=3"
   }
 }

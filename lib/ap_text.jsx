@@ -1,6 +1,6 @@
 /**
  * apeman react package text component.
- * @constructor ApText
+ * @class ApText
  */
 
 'use strict'
@@ -56,9 +56,9 @@ const ApText = React.createClass({
     let multiline = props.rows > 1
     return (
       <span className={ classnames('ap-text-wrap', { 'ap-text-wrap-empty': !hasVal }) }>
-                {
-                  multiline ? s._renderTextArea(value) : s._renderTextInput(value)
-                }
+        {
+          multiline ? s._renderTextArea(value) : s._renderTextInput(value)
+        }
         {
           state.suggesting ? s._renderCandidateList(state.candidates, state.selectedCandidate, multiline) : null
         }
@@ -233,12 +233,13 @@ const ApText = React.createClass({
       <ul className="ap-text-candidate-list">
         {
           candidates.map((candidate) =>
-            <li key={candidate} className={ classnames("ap-text-candidate-list-item", {
-                        'ap-text-candidate-list-item-selected': candidate === selectedCandidate
-                      }) }>
+            <li key={ candidate }
+                className={ classnames('ap-text-candidate-list-item', {
+                  'ap-text-candidate-list-item-selected': candidate === selectedCandidate
+                }) }>
               <a onClick={s.handleCandidate}
                  ref={`candidate-${candidate}`}
-                 data-value={candidate}>{candidate}</a>
+                 data-value={ candidate }>{ candidate }</a>
             </li>
           )
         }
@@ -247,4 +248,4 @@ const ApText = React.createClass({
   }
 })
 
-module.exports = ApText
+export default ApText

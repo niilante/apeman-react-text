@@ -2,15 +2,30 @@
 
 const React = require('react')
 const ReactDomServer = require('react-dom/server')
+const pkg = require('../../package.json')
+const { ApDemo } = require('apeman-react-demo')
 
 module.exports = {
   force: true,
   mode: '444',
   tmpl (data) {
-    return ReactDomServer.renderToStaticMarkup(data.component)
+    let { component, props, children } = data
+    let elm = React.createElement(component, props, ...children)
+    return ReactDomServer.renderToStaticMarkup(elm)
   },
   data: {
-    component: require('./demo.html.js')
+    component: ApDemo,
+    props: {
+      pkg,
+      src: require.resolve('./demo.component.jsx'),
+      scripts: [
+        './demo.external.cc.js',
+        './demo.js'
+      ]
+    },
+    children: [
+      React.createElement(require('./demo.component').default)
+    ]
   }
 }
 

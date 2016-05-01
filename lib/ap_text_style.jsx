@@ -1,6 +1,6 @@
 /**
  * Style for ApText.
- * @constructor ApTextStyle
+ * @class ApTextStyle
  */
 
 'use strict'
@@ -106,4 +106,4 @@ const ApTextStyle = React.createClass({
     )
   }
 })
-module.exports = ApTextStyle
+export default ApTextStyle

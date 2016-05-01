@@ -2,14 +2,15 @@
 
 import React from 'react'
 import ApText from '../../lib/ap_text'
+import ApTextStyle from '../../lib/ap_text_style'
 
-module.exports = React.createClass({
+export default React.createClass({
   getInitialState () {
     return {
       value: 'ban'
     }
   },
-  handleChange(e) {
+  handleChange (e) {
     const s = this
     s.setState({
       value: e.target.value
@@ -20,17 +21,12 @@ module.exports = React.createClass({
     let { state } = s
     return (
       <div>
+        <ApTextStyle highlightColor="#b35600"/>
         <ApText onChange={ s.handleChange } value={ state.value }/>
         <ApText onChange={ s.handleChange } value={ state.value } rows={2}/>
         <ApText onChange={ s.handleChange } value={ state.value }
-                candidates={[
-                'banana',
-                'orange',
-                'apple'
-                ]}/>
+                candidates={ [ 'banana', 'orange', 'apple' ] }/>
       </div>
     )
   }
 })
-
-

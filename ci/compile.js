@@ -9,51 +9,45 @@
 process.chdir(`${__dirname}/..`)
 
 const apeTasking = require('ape-tasking')
-const async = require('async')
+const fs = require('fs')
 const apeCompiling = require('ape-compiling')
 const filecopy = require('filecopy')
+const co = require('co')
 const coz = require('coz')
 
 apeTasking.runTasks('compile', [
-  (callback) => {
+  () => {
     let libDir = `${__dirname}/../lib`
-    apeCompiling.compileReactJsx('*.jsx', {
+    return apeCompiling.compileReactJsx('*.jsx', {
       cwd: libDir,
       out: libDir,
       map: 'inline'
-    }, callback)
+    })
   },
-  (callback) => {
+  () => {
     let demoDir = `${__dirname}/../doc/demo`
-    async.series([
-      (callback) => {
-        apeCompiling.compileReactJsx('*.jsx', {
-          cwd: demoDir,
-          out: demoDir,
-          map: 'inline',
-          minified: true
-        }, callback)
-      },
-      (callback) => {
-        coz.render(demoDir + '/.*.bud', callback)
-      },
-      (callback) => {
-        apeCompiling.browserifyJs(
-          demoDir + '/demo.node.js',
-          demoDir + '/demo.js',
-          {
-            debug: true,
-            external: require('apeman-asset-javascripts/src/demo.external.json')
-          },
-          callback)
-      },
-      (callback) => {
-        filecopy(
-          require.resolve('apeman-asset-javascripts/dist/demo.external.cc.js'),
-          demoDir + '/demo.external.cc.js',
-          callback
-        )
+    return co(function * () {
+      if (!fs.existsSync(demoDir)) {
+        return
       }
-    ], callback)
+      yield apeCompiling.compileReactJsx('*.jsx', {
+        cwd: demoDir,
+        out: demoDir,
+        map: 'inline',
+        minified: true
+      })
+      yield coz.render(demoDir + '/.*.bud')
+      yield apeCompiling.browserifyJs(
+        `${demoDir}/demo.browser.js`,
+        `${demoDir}/demo.js`,
+        {
+          debug: true,
+          external: require('apeman-asset-javascripts/src/demo.external.json')
+        })
+      yield filecopy(
+        require.resolve('apeman-asset-javascripts/dist/demo.external.cc.js'),
+        demoDir + '/demo.external.cc.js'
+      )
+    })
   }
 ], true)

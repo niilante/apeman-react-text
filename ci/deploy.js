@@ -12,8 +12,6 @@ const apeTasking = require('ape-tasking')
 const apeDeploying = require('ape-deploying')
 
 apeTasking.runTasks('deploy', [
-  (callback) => {
-    apeDeploying.deployGhPages("doc", callback)
-  }
+  () => apeDeploying.deployGhPages('doc')
 ], true)
 

@@ -12,8 +12,7 @@ module.exports = apeTmpl.indexJsBud({
   desc: pkg.description,
   dirname: __dirname,
   subclasses: [
-    'ApText',
-    'ApTextStyle'
+    '*'
   ]
 })
 

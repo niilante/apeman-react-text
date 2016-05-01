@@ -4,7 +4,7 @@
  */
 'use strict'
 
-const ApText = require('../lib/ap_text.js')
+const ApText = require('../lib/ap_text.js').default
 const ReactDOM = require('react-dom/server')
 const assert = require('assert')
 const React = require('react')

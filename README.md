@@ -91,21 +91,19 @@ Usage
 import React from 'react'
 import {ApText, ApTextStyle} from 'apeman-react-text'
 
-const html = (
-  <html>
-  <head>
-    <ApTextStyle />
-  </head>
-  <body>
-  <ApText name="username"
-          value="AIUEO"
-          onChange={ (e) => {
-                           console.log(e.target.value)
-                      } }
-  ></ApText>
-  </body>
-  </html>
-)
+const ExampleComponent = React.createClass({
+  render() {
+    return (
+      <div>
+        <ApTextStyle />
+        <ApText name="username"
+                value="AIUEO"
+                onChange={ (e) => console.log(e.target.value) }
+        />
+      </div>
+    )
+  }
+})
 
 ```
 
@@ -126,11 +124,11 @@ Components
 
 | Name | Type | Default | Description |
 | ---- | ---- | ------- | ----------- |
-| scoped | bool | false |  |
-| type | string | 'text/css' |  |
-| style | object | {} |  |
-| highlightColor | string | ApStyle.DEFAULT_HIGHLIGHT_COLOR |  |
-| maxWidth | number | ApStyle.CONTENT_WIDTH |  |
+| scoped | bool | false | |  |
+| type | string | &#x27;text/css&#x27; | |  |
+| style | object | {} | |  |
+| highlightColor | string | ApStyle.DEFAULT_HIGHLIGHT_COLOR | |  |
+| maxWidth | number | ApStyle.CONTENT_WIDTH | |  |
 
 ### ApText
 
@@ -138,11 +136,11 @@ Components
 
 | Name | Type | Default | Description |
 | ---- | ---- | ------- | ----------- |
-| name | string | '' | Name of text input |
-| value | string | null | Value of text input |
-| placeholder | string | '' | Placehoder text |
-| rows | number | 1 | Number of rows |
-| candidates | arrayOf | null | Selectable candidate text |
+| name | string | &#x27;&#x27; | | Name of text input |
+| value | string | null | | Value of text input |
+| placeholder | string | &#x27;&#x27; | | Placehoder text |
+| rows | number | 1 | | Number of rows |
+| candidates | arrayOf | null | | Selectable candidate text |
 
 
 

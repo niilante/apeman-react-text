@@ -12,12 +12,10 @@ const apeTasking = require('ape-tasking')
 const coz = require('coz')
 
 apeTasking.runTasks('build', [
-  (callback) => {
-    coz.render([
-      '.*.bud',
-      'doc/**/.*.bud',
-      'lib/.*.bud',
-      'test/.*.bud'
-    ], callback)
-  }
+  () => coz.render([
+    '.*.bud',
+    'doc/**/.*.bud',
+    'lib/.*.bud',
+    'test/.*.bud'
+  ])
 ], true)
