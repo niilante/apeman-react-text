@@ -5,6 +5,7 @@ before_install:
 - npm install babel-cli browserify mocha istanbul -g
 install:
 - npm install
+- npm install babel-preset-es2015 babel-preset-react
 script:
 - ./ci/compile.js
 - ./ci/build.js
