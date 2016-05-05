@@ -124,7 +124,6 @@ Components
 
 | Name | Type | Default | Description |
 | ---- | ---- | ------- | ----------- |
-| scoped | bool | false | |  |
 | type | string | &#x27;text/css&#x27; | |  |
 | style | object | {} | |  |
 | highlightColor | string | ApStyle.DEFAULT_HIGHLIGHT_COLOR | |  |
@@ -137,8 +136,8 @@ Components
 | Name | Type | Default | Description |
 | ---- | ---- | ------- | ----------- |
 | name | string | &#x27;&#x27; | | Name of text input |
-| value | string | null | | Value of text input |
-| placeholder | string | &#x27;&#x27; | | Placehoder text |
+| value | string | &#x27;&#x27; | | Value of text input |
+| placeholder | string | &#x27;&#x27; | | Placeholder text |
 | rows | number | 1 | | Number of rows |
 | candidates | arrayOf | null | | Selectable candidate text |
 
