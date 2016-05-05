@@ -21,7 +21,7 @@ const ApText = React.createClass({
     name: types.string,
     /** Value of text input */
     value: types.string,
-    /** Placehoder text */
+    /** Placeholder text */
     placeholder: types.string,
     /** Number of rows */
     rows: types.number,
@@ -40,7 +40,7 @@ const ApText = React.createClass({
   getDefaultProps () {
     return {
       name: '',
-      value: null,
+      value: '',
       placeholder: '',
       rows: 1,
       candidates: null

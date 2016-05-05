@@ -11,7 +11,7 @@ import {ApStyle} from 'apeman-react-style'
 /** @lends ApTextStyle */
 const ApTextStyle = React.createClass({
   propTypes: {
-    scoped: types.bool,
+    
     type: types.string,
     style: types.object,
     highlightColor: types.string,
@@ -19,7 +19,7 @@ const ApTextStyle = React.createClass({
   },
   getDefaultProps () {
     return {
-      scoped: false,
+      
       type: 'text/css',
       style: {},
       maxWidth: ApStyle.CONTENT_WIDTH,
@@ -97,7 +97,7 @@ const ApTextStyle = React.createClass({
     let mediumMediaData = {}
     let largeMediaData = {}
     return (
-      <ApStyle scoped={ props.scoped }
+      <ApStyle 
                data={ Object.assign(data, props.style) }
                smallMediaData={ smallMediaData }
                mediumMediaData={ mediumMediaData }
