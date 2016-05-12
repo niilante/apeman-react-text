@@ -50,7 +50,7 @@ const ApText = React.createClass({
   render () {
     const s = this
     let { state, props } = s
-    let value = props.value || null
+    let { value } = props
     let hasVal = !!value
 
     let multiline = props.rows > 1
@@ -192,10 +192,11 @@ const ApText = React.createClass({
     const s = this
     let { props } = s
     return (
-      <textarea className={ classnames('ap-text ap-text-multiple', props.className) }
-                value={ value }
-                onFocus=""
-        { ...props }>
+      <textarea { ...props }
+        className={ classnames('ap-text ap-text-multiple', props.className) }
+        value={ value }
+        onFocus=""
+      >
                 </textarea>
     )
   },
@@ -203,15 +204,16 @@ const ApText = React.createClass({
     const s = this
     let { props } = s
     return (
-      <input className={ classnames('ap-text', props.className)}
-             value={ value }
-             onFocus={ s.handleFocus }
-             onKeyUp={ s.handleKeyUp }
-             onChange={ s.handleChange }
-             onBlur={ s.handleBlur }
-             onKeyDown={ s.handleKeyDown }
-             type="text"
-        { ...props } />
+      <input { ...props }
+        className={ classnames('ap-text', props.className)}
+        value={ value }
+        onFocus={ s.handleFocus }
+        onKeyUp={ s.handleKeyUp }
+        onChange={ s.handleChange }
+        onBlur={ s.handleBlur }
+        onKeyDown={ s.handleKeyDown }
+        type="text"
+      />
     )
   },
   _renderCandidateList (candidates, selectedCandidate, multiline) {
