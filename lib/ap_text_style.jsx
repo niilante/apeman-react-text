@@ -7,6 +7,7 @@
 
 import React, {PropTypes as types} from 'react'
 import {ApStyle} from 'apeman-react-style'
+import apemancolor from 'apemancolor'
 
 /** @lends ApTextStyle */
 const ApTextStyle = React.createClass({
@@ -82,13 +83,13 @@ const ApTextStyle = React.createClass({
         background: '#F5F5F5'
       },
       '.ap-text-candidate-list-item-selected a': {
-        background: ApStyle.colorAlpha(highlightColor, 0.33)
+        background: apemancolor.alpha(highlightColor, 0.33)
       },
       '.ap-text-candidate-list-item-selected a:hover': {
-        background: ApStyle.colorAlpha(highlightColor, 0.5)
+        background: apemancolor.alpha(highlightColor, 0.5)
       },
       '.ap-text-candidate-list-item-selected a:active': {
-        background: ApStyle.colorAlpha(highlightColor, 0.2)
+        background: apemancolor.alpha(highlightColor, 0.2)
       }
     }
     let smallMediaData = {}

@@ -24,7 +24,8 @@
   },
   "homepage": "https://github.com/apeman-react-labo/apeman-react-text#readme",
   "dependencies": {
-    "apeman-react-style": "^3.0.3",
+    "apeman-react-style": "^4.0.0",
+    "apemancolor": "^1.0.2",
     "classnames": "^2.2.5",
     "co": "^4.6.0"
   },
@@ -40,7 +41,7 @@
     "ape-tmpl": "^5.0.1",
     "ape-updating": "^3.0.2",
     "ape-watching": "^2.1.1",
-    "apeman-asset-javascripts": "^3.0.9",
+    "apeman-asset-javascripts": "^3.0.13",
     "apeman-react-demo": "^1.0.13",
     "coz": "^5.1.5",
     "filecopy": "^2.0.0",
