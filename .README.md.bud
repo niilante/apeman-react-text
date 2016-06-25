@@ -25,7 +25,7 @@ module.exports = apeTmpl.readmeMdBud({
   vars: {
     org: pkg.repository.split('/').shift(),
     get components () {
-      let pattern = `${__dirname}/lib/*.jsx`
+      let pattern = `${__dirname}/lib/ap_*.jsx`
       return apeDoc.parseReactComponent.fromPattern(pattern)
     }
   }

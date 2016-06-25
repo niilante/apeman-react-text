@@ -11,7 +11,7 @@ process.chdir(`${__dirname}/..`)
 const apeTasking = require('ape-tasking')
 const fs = require('fs')
 const apeCompiling = require('ape-compiling')
-const filecopy = require('filecopy')
+const filelink = require('filelink')
 const co = require('co')
 const coz = require('coz')
 
@@ -44,9 +44,13 @@ apeTasking.runTasks('compile', [
           debug: true,
           external: require('apeman-asset-javascripts/src/demo.external.json')
         })
-      yield filecopy(
+      yield filelink(
         require.resolve('apeman-asset-javascripts/dist/demo.external.cc.js'),
-        demoDir + '/demo.external.cc.js'
+        demoDir + '/demo.external.cc.js',
+        {
+          force: true,
+          mkdirp: true
+        }
       )
     })
   }

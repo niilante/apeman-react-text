@@ -4,7 +4,8 @@
   "description": "apeman react package for text component.",
   "main": "lib",
   "scripts": {
-    "test": "./ci/test.js"
+    "test": "./ci/test.js",
+    "prepublish": "./ci/compile.js && ./ci/build.js"
   },
   "repository": "apeman-react-labo/apeman-react-text",
   "keywords": [
@@ -36,12 +37,12 @@
     "ape-doc": "^2.0.0",
     "ape-releasing": "^3.1.1",
     "ape-reporting": "^3.0.1",
-    "ape-tasking": "^4.0.0",
+    "ape-tasking": "^4.0.1",
     "ape-testing": "^4.0.0",
     "ape-tmpl": "^5.0.2",
     "ape-updating": "^3.0.2",
     "ape-watching": "^2.1.1",
-    "apeman-asset-javascripts": "^3.0.19",
+    "apeman-asset-javascripts": "^3.0.20",
     "apeman-react-demo": "^1.0.14",
     "coz": "^6.0.2",
     "filecopy": "^2.0.0",

@@ -12,9 +12,10 @@ describe('index', () => {
   })
   after(() => {
   })
-  it('Create an app.', () => {
+  it('Eval props.', () => {
+    assert.ok(Object.keys(index).length > 0)
     for (let name of Object.keys(index)) {
-      assert.ok(index[ name ])
+      assert.ok(index[ name ], `${name} should exists`)
     }
   })
 })
