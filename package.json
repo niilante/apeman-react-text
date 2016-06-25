@@ -1,6 +1,6 @@
 {
   "name": "apeman-react-text",
-  "version": "2.0.8",
+  "version": "2.0.9",
   "description": "apeman react package for text component.",
   "main": "lib",
   "scripts": {
@@ -46,6 +46,7 @@
     "apeman-react-demo": "^1.0.14",
     "coz": "^6.0.2",
     "filecopy": "^2.0.0",
+    "filelink": "^3.0.3",
     "injectmock": "^2.0.0",
     "react": "^15.1.0",
     "react-dom": "^15.1.0"
