@@ -38,7 +38,7 @@ apeTasking.runTasks('compile', [
       })
       yield coz.render(demoDir + '/.*.bud')
       yield apeCompiling.browserifyJs(
-        `${demoDir}/demo.browser.js`,
+        `${demoDir}/demo.entrypoint.js`,
         `${demoDir}/demo.js`,
         {
           debug: true,
