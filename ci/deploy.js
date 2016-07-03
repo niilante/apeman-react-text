@@ -8,10 +8,10 @@
 
 process.chdir(`${__dirname}/..`)
 
-const apeTasking = require('ape-tasking')
-const apeDeploying = require('ape-deploying')
+const { runTasks } = require('ape-tasking')
+const { deployGhPages } = require('ape-deploying')
 
-apeTasking.runTasks('deploy', [
-  () => apeDeploying.deployGhPages('doc')
+runTasks('deploy', [
+  () => deployGhPages('doc')
 ], true)
 

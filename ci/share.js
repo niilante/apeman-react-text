@@ -8,11 +8,11 @@
 
 process.chdir(`${__dirname}/..`)
 
-const apeTasking = require('ape-tasking')
-const pkg = require('../package.json')
+const { runTasks, execcli } = require('ape-tasking')
+const { description, repository } = require('../package.json')
 
-apeTasking.runTasks('share', [
-  () => apeTasking.execcli('hub', [ 'init' ]),
-  () => apeTasking.execcli('hub', [ 'create', { d: pkg.description }, pkg.repository ]),
-  () => apeTasking.execcli('travis', [ 'enable', { r: pkg.repository } ])
+runTasks('share', [
+  () => execcli('hub', [ 'init' ]),
+  () => execcli('hub', [ 'create', { d: description }, repository ]),
+  () => execcli('travis', [ 'enable', { r: repository } ])
 ], true)

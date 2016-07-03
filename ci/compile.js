@@ -8,14 +8,14 @@
 
 process.chdir(`${__dirname}/..`)
 
-const apeTasking = require('ape-tasking')
+const { runTasks } = require('ape-tasking')
 const fs = require('fs')
 const apeCompiling = require('ape-compiling')
 const filelink = require('filelink')
 const co = require('co')
 const coz = require('coz')
 
-apeTasking.runTasks('compile', [
+runTasks('compile', [
   () => {
     let libDir = `${__dirname}/../lib`
     return apeCompiling.compileReactJsx('*.jsx', {

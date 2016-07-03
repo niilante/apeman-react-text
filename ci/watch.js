@@ -8,16 +8,14 @@
 
 process.chdir(`${__dirname}/..`)
 
-const apeWatching = require('ape-watching')
-const childProcess = require('child_process')
+const { watchFiles } = require('ape-watching')
+const { fork } = require('child_process')
 
 let timer = null
 
-apeWatching.watchFiles([
+watchFiles([
   'lib/**/*.jsx'
 ], (ev, filename) => {
   clearTimeout(timer)
-  timer = setTimeout(function () {
-    childProcess.fork('ci/compile.js')
-  }, 300)
+  timer = setTimeout(() => fork('ci/compile.js'), 300)
 })
