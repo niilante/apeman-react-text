@@ -1,6 +1,6 @@
 {
   "name": "apeman-react-text",
-  "version": "2.0.9",
+  "version": "2.0.10",
   "description": "apeman react package for text component.",
   "main": "lib",
   "scripts": {
