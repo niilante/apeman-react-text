@@ -144,7 +144,6 @@ Components
 | candidates | arrayOf | null | | Selectable candidate text |
 
 
-
 <!-- Section from "doc/guides/04.Components.md.hbs" End -->
 
 
@@ -167,8 +166,12 @@ This software is released under the [MIT License](https://github.com/apeman-reac
 Links
 ------
 
-+ [apeman](https://github.com/apeman-labo/apeman)
-+ [apeman-react-labo](https://github.com/apeman-react-labo)
-+ [React](https://facebook.github.io/react/)
++ [apeman][apeman_url]
++ [apeman-react-labo][apeman_react_labo_url]
++ [React][react_url]
+
+[apeman_url]: https://github.com/apeman-labo/apeman
+[apeman_react_labo_url]: https://github.com/apeman-react-labo
+[react_url]: https://facebook.github.io/react/
 
 <!-- Links End -->

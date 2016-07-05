@@ -192,27 +192,32 @@ const ApText = React.createClass({
     const s = this
     let { props } = s
     return (
-      <textarea { ...props }
-        className={ classnames('ap-text ap-text-multiple', props.className) }
-        value={ value }
-        onFocus=""
+      <textarea id={ props.id }
+                name={ props.name }
+                placeholder={ props.placeholder }
+                onChange={ s.handleChange }
+                className={ classnames('ap-text ap-text-multiple', props.className) }
+                value={ value }
+                onFocus=''
       >
-                </textarea>
+      </textarea>
     )
   },
   _renderTextInput (value) {
     const s = this
     let { props } = s
     return (
-      <input { ...props }
-        className={ classnames('ap-text', props.className)}
-        value={ value }
-        onFocus={ s.handleFocus }
-        onKeyUp={ s.handleKeyUp }
-        onChange={ s.handleChange }
-        onBlur={ s.handleBlur }
-        onKeyDown={ s.handleKeyDown }
-        type="text"
+      <input id={ props.id }
+             name={ props.name }
+             placeholder={ props.placeholder }
+             className={ classnames('ap-text', props.className)}
+             value={ value }
+             onFocus={ s.handleFocus }
+             onKeyUp={ s.handleKeyUp }
+             onChange={ s.handleChange }
+             onBlur={ s.handleBlur }
+             onKeyDown={ s.handleKeyDown }
+             type='text'
       />
     )
   },
@@ -232,7 +237,7 @@ const ApText = React.createClass({
       return null
     }
     return (
-      <ul className="ap-text-candidate-list">
+      <ul className='ap-text-candidate-list'>
         {
           candidates.map((candidate) =>
             <li key={ candidate }
@@ -240,7 +245,7 @@ const ApText = React.createClass({
                   'ap-text-candidate-list-item-selected': candidate === selectedCandidate
                 }) }>
               <a onClick={s.handleCandidate}
-                 ref={`candidate-${candidate}`}
+                 ref={ `candidate-${candidate}` }
                  data-value={ candidate }>{ candidate }</a>
             </li>
           )
