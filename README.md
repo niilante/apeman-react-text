@@ -126,7 +126,6 @@ Components
 
 | Name | Type | Default | Description |
 | ---- | ---- | ------- | ----------- |
-| type | string | &#x27;text/css&#x27; | |  |
 | style | object | {} | |  |
 | highlightColor | string | ApStyle.DEFAULT_HIGHLIGHT_COLOR | |  |
 | maxWidth | number | ApStyle.CONTENT_WIDTH | |  |
