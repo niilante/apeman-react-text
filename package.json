@@ -1,11 +1,11 @@
 {
   "name": "apeman-react-text",
-  "version": "2.0.11",
+  "version": "2.0.12",
   "description": "apeman react package for text component.",
   "main": "lib",
   "scripts": {
     "test": "./ci/test.js",
-    "prepublish": "./ci/compile.js && ./ci/build.js"
+    "prepublish": "./ci/build.js"
   },
   "repository": "apeman-react-labo/apeman-react-text",
   "keywords": [
@@ -31,25 +31,27 @@
     "co": "^4.6.0"
   },
   "devDependencies": {
-    "ape-compiling": "^4.3.3",
+    "ababel": "^1.0.11",
+    "ababel-es2015": "^1.0.1",
+    "ababel-react": "^1.0.1",
+    "abrowserify": "^1.0.7",
+    "ape-capturing": "^1.0.4",
     "ape-covering": "^3.0.3",
-    "ape-deploying": "^5.0.2",
-    "ape-doc": "^2.0.3",
-    "ape-releasing": "^4.0.1",
+    "ape-deploying": "^5.0.4",
+    "ape-doc": "^2.0.4",
+    "ape-releasing": "^4.0.2",
     "ape-reporting": "^3.0.1",
-    "ape-tasking": "^4.0.3",
-    "ape-testing": "^4.0.0",
-    "ape-tmpl": "^5.0.11",
-    "ape-updating": "^4.0.3",
-    "ape-watching": "^2.1.1",
-    "apeman-asset-javascripts": "^3.1.35",
+    "ape-tasking": "^4.0.7",
+    "ape-testing": "^4.0.1",
+    "ape-tmpl": "^5.0.13",
+    "ape-updating": "^4.0.4",
+    "ape-watching": "^2.1.2",
     "apeman-react-demo": "^1.0.19",
-    "coz": "^6.0.3",
-    "filecopy": "^2.0.0",
-    "filelink": "^3.0.3",
+    "coz": "^6.0.11",
+    "filecopy": "^2.0.1",
     "injectmock": "^2.0.0",
-    "react": "^15.2.0",
-    "react-dom": "^15.2.0"
+    "react": "^15.2.1",
+    "react-dom": "^15.2.1"
   },
   "peerDependencies": {
     "react": ">=15",

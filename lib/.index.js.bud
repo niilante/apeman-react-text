@@ -4,12 +4,12 @@
 
 'use strict'
 
-const apeTmpl = require('ape-tmpl')
-const pkg = require('../package.json')
+const { indexJsBud } = require('ape-tmpl')
+const { name, description } = require('../package.json')
 
-module.exports = apeTmpl.indexJsBud({
-  module: pkg.name,
-  desc: pkg.description,
+module.exports = indexJsBud({
+  module: name,
+  desc: description,
   dirname: __dirname,
   subclasses: [
     '*'

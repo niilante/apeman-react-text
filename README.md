@@ -55,6 +55,7 @@ apeman react package for text component.
 <!-- Section from "doc/guides/01.Installation.md.hbs" Start -->
 
 <a name="section-doc-guides-01-installation-md"></a>
+
 Installation
 -----
 
@@ -68,6 +69,7 @@ $ npm install apeman-react-text --save
 <!-- Section from "doc/guides/02.Demo.md.hbs" Start -->
 
 <a name="section-doc-guides-02-demo-md"></a>
+
 Demo
 -----
 
@@ -84,6 +86,7 @@ Demo
 <!-- Section from "doc/guides/03.Usage.md.hbs" Start -->
 
 <a name="section-doc-guides-03-usage-md"></a>
+
 Usage
 ---------
 
@@ -116,6 +119,7 @@ const ExampleComponent = React.createClass({
 <!-- Section from "doc/guides/04.Components.md.hbs" Start -->
 
 <a name="section-doc-guides-04-components-md"></a>
+
 Components
 -----
 

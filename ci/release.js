@@ -14,7 +14,6 @@ const { releasePackage } = require('ape-releasing')
 runTasks('release', [
   () => releasePackage({
     beforeRelease: [
-      './ci/compile.js',
       './ci/build.js',
       './ci/test.js',
       './ci/deploy.js'

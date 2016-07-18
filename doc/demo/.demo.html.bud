@@ -19,7 +19,6 @@ module.exports = {
       pkg,
       src: require.resolve('./demo.component.jsx'),
       scripts: [
-        './demo.external.cc.js',
         './demo.js'
       ]
     },
