@@ -1,18 +1,24 @@
 /**
- * Bud file for test cases.
+ * Bud file for tests
  */
 
 'use strict'
 
-const apeTmpl = require('ape-tmpl')
+const Templates = require('apeman-asset-templates')
+const path = require('path')
+const { snakecase } = require('stringcase')
+const aglob = require('aglob')
 
-module.exports = apeTmpl.mochaTestJsBud({
-  src: [
-    `${__dirname}/../lib/**/*.js`
-  ],
-  dest: __dirname
-})
-
+module.exports = aglob.sync('*.jsx', { cwd: `${__dirname}/../lib` })
+  .map((filename) => path.basename(filename, path.extname(filename)))
+  .filter((name) => name !== 'index')
+  .map((name) => ({
+    force: false,
+    mode: '644',
+    path: `${snakecase(name)}_test.jsx`,
+    tmpl: Templates.reactTest,
+    data: { name }
+  }))
 if (!module.parent) {
   require('coz').render(__filename)
 }

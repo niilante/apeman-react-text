@@ -1,0 +1,26 @@
+/**
+ * Bud file for index.js
+ */
+
+'use strict'
+
+const Templates = require('apeman-asset-templates')
+const pkg = require('../package.json')
+const path = require('path')
+const aglob = require('aglob')
+
+module.exports = {
+  force: true,
+  mode: '444',
+  tmpl: Templates.reactIndex,
+  data: {
+    pkg,
+    components: aglob.sync('*.jsx', { cwd: __dirname })
+      .map((filename) => path.basename(filename, path.extname(filename)))
+      .filter((name) => name !== 'index')
+  }
+}
+
+if (!module.parent) {
+  require('coz').render(__filename)
+}

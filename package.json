@@ -1,8 +1,8 @@
 {
   "name": "apeman-react-text",
-  "version": "2.0.12",
+  "version": "4.0.0",
   "description": "apeman react package for text component.",
-  "main": "lib",
+  "main": "shim/node",
   "scripts": {
     "test": "./ci/test.js",
     "prepublish": "./ci/build.js"
@@ -31,27 +31,31 @@
     "co": "^4.6.0"
   },
   "devDependencies": {
-    "ababel": "^1.0.11",
-    "ababel-es2015": "^1.0.1",
-    "ababel-react": "^1.0.1",
-    "abrowserify": "^1.0.7",
+    "ababel": "^1.0.25",
+    "ababel-es2015": "^1.0.5",
+    "ababel-react": "^1.0.5",
+    "abrowserify": "^1.0.18",
+    "amocha": "^1.0.9",
     "ape-capturing": "^1.0.4",
-    "ape-covering": "^3.0.3",
     "ape-deploying": "^5.0.4",
     "ape-doc": "^2.0.4",
     "ape-releasing": "^4.0.2",
     "ape-reporting": "^3.0.1",
     "ape-tasking": "^4.0.7",
-    "ape-testing": "^4.0.1",
-    "ape-tmpl": "^5.0.13",
+    "ape-tmpl": "^5.0.14",
     "ape-updating": "^4.0.4",
     "ape-watching": "^2.1.2",
-    "apeman-react-demo": "^1.0.19",
-    "coz": "^6.0.11",
+    "apeman-asset-templates": "^1.1.1",
+    "apeman-react-demo": "^1.0.20",
+    "breact": "^1.0.6",
+    "coz": "^6.0.14",
+    "enzyme": "^2.4.1",
     "filecopy": "^2.0.1",
     "injectmock": "^2.0.0",
     "react": "^15.2.1",
-    "react-dom": "^15.2.1"
+    "react-addons-test-utils": "^15.2.1",
+    "react-dom": "^15.2.1",
+    "stringcase": "^3.0.1"
   },
   "peerDependencies": {
     "react": ">=15",
