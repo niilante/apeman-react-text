@@ -1,6 +1,6 @@
 {
   "name": "apeman-react-text",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "apeman react package for text component.",
   "main": "shim/node",
   "scripts": {
