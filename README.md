@@ -130,9 +130,6 @@ Components
 
 | Name | Type | Default | Description |
 | ---- | ---- | ------- | ----------- |
-| style | object | {} | |  |
-| highlightColor | string | ApStyle.DEFAULT_HIGHLIGHT_COLOR | |  |
-| maxWidth | number | ApStyle.CONTENT_WIDTH | |  |
 
 ### ApText
 
@@ -140,11 +137,6 @@ Components
 
 | Name | Type | Default | Description |
 | ---- | ---- | ------- | ----------- |
-| name | string | &#x27;&#x27; | | Name of text input |
-| value | string | &#x27;&#x27; | | Value of text input |
-| placeholder | string | &#x27;&#x27; | | Placeholder text |
-| rows | number | 1 | | Number of rows |
-| candidates | arrayOf | null | | Selectable candidate text |
 
 
 <!-- Section from "doc/guides/04.Components.md.hbs" End -->

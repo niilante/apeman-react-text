@@ -5,66 +5,78 @@
 
 'use strict'
 
-import React, {PropTypes as types} from 'react'
+import React, {Component, PropTypes as types} from 'react'
 import ReactDOM from 'react-dom'
 import classnames from 'classnames'
 
 /** @lends ApText */
-const ApText = React.createClass({
-
+class ApText extends Component {
   // --------------------
   // Specs
   // --------------------
-
-  propTypes: {
-    /** Name of text input */
-    name: types.string,
-    /** Value of text input */
-    value: types.string,
-    /** Placeholder text */
-    placeholder: types.string,
-    /** Number of rows */
-    rows: types.number,
-    /** Selectable candidate text */
-    candidates: types.arrayOf(types.string)
-  },
-
-  getInitialState () {
-    return {
+  constructor (props) {
+    super(props)
+    const s = this
+    s.state = {
       suggesting: false,
       candidates: null,
       selectedCandidate: null
     }
-  },
-
-  getDefaultProps () {
-    return {
-      name: '',
-      value: '',
-      placeholder: '',
-      rows: 1,
-      candidates: null
+    let methodsToBind = [
+      'handleFocus',
+      'handleKeyUp',
+      'handleChange',
+      'handleBlur',
+      'handleKeyDown',
+      'handleCandidate'
+    ]
+    for (let name of methodsToBind) {
+      s[ name ] = s[ name ].bind(s)
     }
-  },
+  }
 
   render () {
     const s = this
     let { state, props } = s
-    let { value } = props
+    let {
+      id,
+      name,
+      placeholder,
+      className,
+      value
+    } = props
     let hasVal = !!value
 
     let multiline = props.rows > 1
+
+    let {
+      candidates,
+      selectedCandidate,
+      suggesting
+    } = state
+
+    let textHandlers = {
+      onFocus: s.handleFocus,
+      onKeyUp: s.handleKeyUp,
+      onChange: s.handleChange,
+      onBlur: s.handleBlur,
+      onKeyDown: s.handleKeyDown
+    }
+    let candidateHandlers = {
+      onClick: s.handleCandidate
+    }
+
     return (
       <span className={ classnames('ap-text-wrap', { 'ap-text-wrap-empty': !hasVal }) }>
-        {
-          multiline ? s._renderTextArea(value) : s._renderTextInput(value)
-        }
-        {
-          state.suggesting ? s._renderCandidateList(state.candidates, state.selectedCandidate, multiline) : null
-        }
-            </span>
+        <ApText.Text { ...{ id, name, value, placeholder, className, multiline } }
+                     handlers={ textHandlers }
+        />
+        <ApText.CandidateList { ...{ suggesting, candidates, selectedCandidate, multiline } }
+                              handlers={ candidateHandlers }
+        />
+      </span>
     )
-  },
+  }
 
   // --------------------
   // Custom
@@ -78,7 +90,7 @@ const ApText = React.createClass({
     if (props.onChange) {
       props.onChange(e)
     }
-  },
+  }
 
   handleFocus (e) {
     const s = this
@@ -88,7 +100,7 @@ const ApText = React.createClass({
     if (props.onFocus) {
       props.onFocus(e)
     }
-  },
+  }
 
   handleChange (e) {
     const s = this
@@ -97,7 +109,7 @@ const ApText = React.createClass({
     if (props.onChange) {
       props.onChange(e)
     }
-  },
+  }
 
   handleBlur (e) {
     const s = this
@@ -105,7 +117,7 @@ const ApText = React.createClass({
     if (props.onBlur) {
       props.onBlur(e)
     }
-  },
+  }
 
   handleKeyUp (e) {
     const s = this
@@ -114,7 +126,7 @@ const ApText = React.createClass({
     if (props.onKeyUp) {
       props.onKeyUp(e)
     }
-  },
+  }
 
   handleKeyDown (e) {
     const s = this
@@ -136,7 +148,7 @@ const ApText = React.createClass({
     if (props.onKeyDown) {
       props.onKeyDown(e)
     }
-  },
+  }
 
   moveCandidateIndex (amount) {
     const s = this
@@ -152,12 +164,12 @@ const ApText = React.createClass({
     s.setState({
       selectedCandidate: candidates[ index ] || null
     })
-  },
+  }
 
   updateCandidates () {
     const s = this
     let { props } = s
-    let value = props.value
+    let { value } = props
     let candidates = (props.candidates || [])
       .filter((candidate) => !!candidate)
       .map((candidate) => String(candidate).trim())
@@ -168,7 +180,7 @@ const ApText = React.createClass({
       candidates = null
     }
     s.setState({ candidates })
-  },
+  }
 
   enterCandidate () {
     const s = this
@@ -176,54 +188,48 @@ const ApText = React.createClass({
     let { candidates, selectedCandidate } = s.state
     let valid = candidates && !!~candidates.indexOf(selectedCandidate)
     if (valid) {
-      let target = ReactDOM.findDOMNode(s.refs[ `candidate-${selectedCandidate}` ])
-      target.value = selectedCandidate
+      let target = { value: selectedCandidate }
       if (props.onChange) {
         props.onChange({ target })
       }
       s.setState({ suggesting: false })
     }
-  },
+  }
 
   // --------------------
-  // Private
+  // Static methods
   // --------------------
-  _renderTextArea (value) {
-    const s = this
-    let { props } = s
-    return (
-      <textarea id={ props.id }
-                name={ props.name }
-                placeholder={ props.placeholder }
-                onChange={ s.handleChange }
-                className={ classnames('ap-text ap-text-multiple', props.className) }
-                value={ value }
-                onFocus=''
-      >
+  static Text ({ id, name, value, placeholder, className, multiline, handlers }) {
+    if (multiline) {
+      return (
+        <textarea id={ id }
+                  name={ name }
+                  placeholder={ placeholder }
+                  className={ classnames('ap-text ap-text-multiple', className) }
+                  value={ value }
+                  { ...handlers }
+                  onFocus={ null }
+        >
       </textarea>
-    )
-  },
-  _renderTextInput (value) {
-    const s = this
-    let { props } = s
-    return (
-      <input id={ props.id }
-             name={ props.name }
-             placeholder={ props.placeholder }
-             className={ classnames('ap-text', props.className)}
-             value={ value }
-             onFocus={ s.handleFocus }
-             onKeyUp={ s.handleKeyUp }
-             onChange={ s.handleChange }
-             onBlur={ s.handleBlur }
-             onKeyDown={ s.handleKeyDown }
-             type='text'
-      />
-    )
-  },
-  _renderCandidateList (candidates, selectedCandidate, multiline) {
-    const s = this
-    let { props } = s
+      )
+    } else {
+      return (
+        <input id={ id }
+               name={ name }
+               placeholder={ placeholder }
+               className={ classnames('ap-text', className)}
+               value={ value }
+               { ...handlers }
+               type='text'
+        />
+      )
+    }
+  }
+
+  static CandidateList ({ suggesting, candidates, selectedCandidate, multiline, handlers }) {
+    if (!suggesting) {
+      return null
+    }
     if (multiline) {
       console.warn('[ApText] Can not use candidates with multiline input.')
       return null
@@ -236,6 +242,7 @@ const ApText = React.createClass({
     if (!candidates.length) {
       return null
     }
+
     return (
       <ul className='ap-text-candidate-list'>
         {
@@ -244,8 +251,7 @@ const ApText = React.createClass({
                 className={ classnames('ap-text-candidate-list-item', {
                   'ap-text-candidate-list-item-selected': candidate === selectedCandidate
                 }) }>
-              <a onClick={s.handleCandidate}
-                 ref={ `candidate-${candidate}` }
+              <a { ...handlers }
                  data-value={ candidate }>{ candidate }</a>
             </li>
           )
@@ -253,6 +259,34 @@ const ApText = React.createClass({
       </ul>
     )
   }
+}
+
+Object.assign(ApText, {
+  // --------------------
+  // Specs
+  // --------------------
+
+  propTypes: {
+    /** Name of text input */
+    name: types.string,
+    /** Value of text input */
+    value: types.string,
+    /** Placeholder text */
+    placeholder: types.string,
+    /** Number of rows */
+    rows: types.number,
+    /** Selectable candidate text */
+    candidates: types.arrayOf(types.string)
+  },
+
+  defaultProps: {
+    name: '',
+    value: '',
+    placeholder: '',
+    rows: 1,
+    candidates: null
+  }
+
 })
 
 export default ApText
