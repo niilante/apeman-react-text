@@ -42,6 +42,7 @@ class ApText extends Component {
       id,
       name,
       placeholder,
+      autoFocus,
       className,
       value
     } = props
@@ -68,7 +69,7 @@ class ApText extends Component {
 
     return (
       <span className={ classnames('ap-text-wrap', { 'ap-text-wrap-empty': !hasVal }) }>
-        <ApText.Text { ...{ id, name, value, placeholder, className, multiline } }
+        <ApText.Text { ...{ id, name, value, placeholder, className, autoFocus, multiline } }
                      handlers={ textHandlers }
         />
         <ApText.CandidateList { ...{ suggesting, candidates, selectedCandidate, multiline } }
@@ -199,10 +200,11 @@ class ApText extends Component {
   // --------------------
   // Static methods
   // --------------------
-  static Text ({ id, name, value, placeholder, className, multiline, handlers }) {
+  static Text ({ id, name, value, placeholder, className, autoFocus, multiline, handlers }) {
     if (multiline) {
       return (
-        <textarea id={ id }
+        <textarea autoFocus={ autoFocus }
+                  id={ id }
                   name={ name }
                   placeholder={ placeholder }
                   className={ classnames('ap-text ap-text-multiple', className) }
@@ -214,7 +216,8 @@ class ApText extends Component {
       )
     } else {
       return (
-        <input id={ id }
+        <input autoFocus={ autoFocus }
+               id={ id }
                name={ name }
                placeholder={ placeholder }
                className={ classnames('ap-text', className)}
