@@ -60,6 +60,7 @@ Object.assign(ApTextStyle, {
           width: '100%',
           margin: '4px',
           verticalAlign: 'middle',
+          boxSizing: 'border-box',
           maxWidth: `${maxWidth}px`,
           display: 'block'
         },
