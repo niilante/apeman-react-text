@@ -5,7 +5,7 @@
 
 'use strict'
 
-import React, {Component, PropTypes as types} from 'react'
+import React, { Component, PropTypes as types } from 'react'
 import ReactDOM from 'react-dom'
 import classnames from 'classnames'
 
@@ -44,11 +44,12 @@ class ApText extends Component {
       placeholder,
       autoFocus,
       className,
-      value
+      value,
+      rows
     } = props
     let hasVal = !!value
 
-    let multiline = props.rows > 1
+    let multiline = rows && (rows > 1)
 
     let {
       candidates,
@@ -69,7 +70,7 @@ class ApText extends Component {
 
     return (
       <span className={ classnames('ap-text-wrap', { 'ap-text-wrap-empty': !hasVal }) }>
-        <ApText.Text { ...{ id, name, value, placeholder, className, autoFocus, multiline } }
+        <ApText.Text { ...{ id, name, value, placeholder, className, autoFocus, multiline, rows } }
                      handlers={ textHandlers }
         />
         <ApText.CandidateList { ...{ suggesting, candidates, selectedCandidate, multiline } }
@@ -200,12 +201,13 @@ class ApText extends Component {
   // --------------------
   // Static methods
   // --------------------
-  static Text ({ id, name, value, placeholder, className, autoFocus, multiline, handlers }) {
+  static Text ({ id, name, value, placeholder, className, autoFocus, multiline, handlers, rows }) {
     if (multiline) {
       return (
         <textarea autoFocus={ autoFocus }
                   id={ id }
                   name={ name }
+                  rows={ rows }
                   placeholder={ placeholder }
                   className={ classnames('ap-text ap-text-multiple', className) }
                   value={ value }
