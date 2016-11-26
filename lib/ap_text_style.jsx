@@ -5,9 +5,9 @@
 
 'use strict'
 
-import React, {Component, PropTypes as types} from 'react'
-import {ApStyle} from 'apeman-react-style'
-import  {alpha} from 'acolor'
+import React, { Component, PropTypes as types } from 'react'
+import { ApStyle } from 'apeman-react-style'
+import  { alpha } from 'acolor'
 
 /** @lends ApTextStyle */
 class ApTextStyle extends Component {
@@ -58,7 +58,8 @@ Object.assign(ApTextStyle, {
         '.ap-text-wrap': {
           position: 'relative',
           width: '100%',
-          margin: '4px',
+          padding: '4px',
+          margin: 0,
           verticalAlign: 'middle',
           boxSizing: 'border-box',
           maxWidth: `${maxWidth}px`,
