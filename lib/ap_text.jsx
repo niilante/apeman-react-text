@@ -142,6 +142,9 @@ class ApText extends Component {
         break
       case 13: // Enter
         s.enterCandidate()
+        if (props.onEnter) {
+          props.onEnter()
+        }
         break
       default:
         s.setState({ suggesting: true })
@@ -281,7 +284,9 @@ Object.assign(ApText, {
     /** Number of rows */
     rows: types.number,
     /** Selectable candidate text */
-    candidates: types.arrayOf(types.string)
+    candidates: types.arrayOf(types.string),
+    /** Callback for entry key press */
+    onEnter: types.func
   },
 
   defaultProps: {

@@ -1,6 +1,6 @@
 {
   "name": "apeman-react-text",
-  "version": "4.0.7",
+  "version": "4.0.8",
   "description": "apeman react package for text component.",
   "main": "shim/node",
   "scripts": {
@@ -43,7 +43,7 @@
     "ape-tasking": "^4.0.8",
     "ape-tmpl": "^5.0.15",
     "ape-updating": "^4.0.5",
-    "apeman-asset-templates": "^2.3.23",
+    "apeman-asset-templates": "^2.8.8",
     "apeman-react-demo": "^1.0.22",
     "awatch": "^1.0.4",
     "breact": "^1.2.0",

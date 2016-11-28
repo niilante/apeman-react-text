@@ -22,7 +22,7 @@ export default React.createClass({
     return (
       <div>
         <ApTextStyle highlightColor="#b35600"/>
-        <ApText onChange={ s.handleChange } value={ state.value }/>
+        <ApText onChange={ s.handleChange } value={ state.value } onEnter={ () => console.log('enter') }/>
         <ApText onChange={ s.handleChange } value={ state.value } rows={ 6 }/>
         <ApText onChange={ s.handleChange } value={ state.value }
                 candidates={ [ 'banana', 'orange', 'apple' ] }/>
