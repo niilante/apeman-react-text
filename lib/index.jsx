@@ -1,7 +1,7 @@
 /**
  * apeman react package for text component.
  * @module apeman-react-text
- * @version 4.0.7
+ * @version 4.0.8
  */
 'use strict'
 

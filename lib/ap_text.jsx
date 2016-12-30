@@ -238,16 +238,17 @@ class ApText extends Component {
     if (!suggesting) {
       return null
     }
-    if (multiline) {
-      console.warn('[ApText] Can not use candidates with multiline input.')
-      return null
-    }
 
     if (!candidates) {
       return null
     }
 
     if (!candidates.length) {
+      return null
+    }
+
+    if (multiline) {
+      console.warn('[ApText] Can not use candidates with multiline input.')
       return null
     }
 
