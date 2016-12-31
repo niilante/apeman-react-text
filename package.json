@@ -1,6 +1,6 @@
 {
   "name": "apeman-react-text",
-  "version": "4.0.8",
+  "version": "4.0.9",
   "description": "apeman react package for text component.",
   "main": "shim/node",
   "scripts": {
@@ -43,19 +43,19 @@
     "ape-tasking": "^4.0.8",
     "ape-tmpl": "^5.0.15",
     "ape-updating": "^4.0.5",
-    "apeman-asset-templates": "^2.8.8",
+    "apeman-asset-templates": "^2.8.10",
     "apeman-react-demo": "^1.0.22",
     "awatch": "^1.0.4",
     "breact": "^1.2.0",
     "co": "^4.6.0",
     "coz": "^6.0.17",
-    "enzyme": "^2.4.1",
+    "enzyme": "^2.7.0",
     "filecopy": "^2.0.2",
     "injectmock": "^2.0.0",
     "react": "^15.3.1",
     "react-addons-test-utils": "^15.3.1",
     "react-dom": "^15.3.1",
-    "stringcase": "^3.0.1"
+    "stringcase": "^3.2.0"
   },
   "peerDependencies": {
     "react": ">=15",
