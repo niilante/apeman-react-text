@@ -1,0 +1,391 @@
+<html class="ap-html react-demo"><head class="ap-head"><meta class="ap-head-meta" charset="utf-8"/><title class="ap-head-title">apeman-react-text Demo</title><link rel="icon" href="https://raw.githubusercontent.com/apeman-asset-labo/apeman-asset-images/master/dist/favicon/react-favicon.png?v=4.0.9"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><script type="text/javascript" src="./demo.js?v=4.0.9"></script><style class="ap-style" type="text/css">@charset "UTF-8";
+.react-demo body {
+  margin: 0;
+  padding: 0;
+  color: #555;
+  background-color: #FAFAFA;
+  font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", メイリオ, Meiryo, sans-serif; }
+
+.react-demo .react-demo-playground {
+  display: block;
+  padding: 40px;
+  min-height: 120px;
+  overflow-x: auto;
+  background-image: -moz-linear-gradient(45deg, #F0F0F0 25%, transparent 25%), -moz-linear-gradient(-45deg, #F0F0F0 25%, transparent 25%), -moz-linear-gradient(45deg, transparent 75%, #F0F0F0 75%), -moz-linear-gradient(-45deg, transparent 75%, #F0F0F0 75%);
+  background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, #F0F0F0), color-stop(0.25, transparent)), -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0.25, #F0F0F0), color-stop(0.25, transparent)), -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.75, transparent), color-stop(0.75, #F0F0F0)), -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0.75, transparent), color-stop(0.75, #F0F0F0));
+  -moz-background-size: 50px 50px;
+  background-size: 50px 50px;
+  -webkit-background-size: 50px 51px;
+  /* override value for shitty webkit */
+  background-position: 0 0, 25px 0, 25px -25px, 0px 25px;
+  border: 1px solid #CCC;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1) inset; }
+
+.react-demo .react-demo-container {
+  max-width: 860px;
+  margin: 0 auto; }
+
+.react-demo .react-demo-header h1 {
+  text-align: center;
+  margin: 8px 0;
+  font-size: 48px; }
+
+.react-demo a:link,
+.react-demo a:visited {
+  color: #b35600;
+  text-decoration: none; }
+
+.react-demo a:link:hover,
+.react-demo a:visited:hover {
+  text-decoration: underline; }
+
+.react-demo .react-demo-src {
+  margin: 0; }
+
+.react-demo .syntaxhighlighter {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #EEE;
+  box-sizing: border-box; }
+
+.react-demo .syntaxhighlighter table {
+  box-sizing: border-box; }
+
+.react-demo .syntaxhighlighter .string, .react-demo .syntaxhighlighter .string a {
+  color: #FF9D43 !important; }
+
+.react-demo .syntaxhighlighter .keyword {
+  color: #b35600 !important; }
+
+/*# sourceMappingURL=react-demo.css.map */</style><style class="ap-style" type="text/css">.ap-icon{ display:inline-block;margin:0 2px; }
+@media (min-width: 768px) {  }
+@media (min-width: 992px) {  }
+@media (min-width: 1200px) {  }</style><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css"/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"/><style class="ap-style" type="text/css">.ap-spinner{ text-align:center;display:none; }
+.ap-spinner.ap-spinner-enabled{ display:inline-flex;justify-content:center;align-items:center;width:100%;height:100%; }
+.ap-spinner-icon{ display:inline-block;margin:0 4px;transition:opacity 100ms;opacity:1; }
+.ap-spinner-cover{ position:absolute;left:0;top:0;right:0;bottom:0;z-index:4;justify-content:center;align-items:center;background:rgba(255,255,255,0.8);color:#CCC; }
+@media (min-width: 768px) {  }
+@media (min-width: 992px) {  }
+@media (min-width: 1200px) {  }</style></head><body class="ap-body"><div id="demo-style"></div><header class="react-demo-header"><div class="react-demo-container"><h1><a href="https://github.com/apeman-react-labo/apeman-react-text#readme">apeman-react-text</a></h1></div></header><main><div><div class="react-demo-playground"><div class="react-demo-container"><div id="demo-wrap"><div><style class="ap-style" type="text/css">.ap-text{ display:block;padding:4px 8px;border:1px solid #AAA;width:100%;max-width:480px;border-radius:2px;box-sizing:border-box;outline-color:#b35600;box-shadow:1px 1px 1px rgba(0,0,0,.05) inset; }
+.ap-text-wrap{ position:relative;width:100%;padding:4px;margin:0;vertical-align:middle;box-sizing:border-box;max-width:480px;display:block; }
+.ap-text-multiple{ overflow:auto; }
+.ap-text-candidate-list{ position:absolute;left:0;right:1px;top:100%;z-index:4;padding:4px 0;margin:0 1px;box-shadow:1px 1px 2px rgba(0,0,0,0.33);background:white;box-sizing:border-box; }
+.ap-text-candidate-list-item{ display:block;padding:0;margin:0; }
+.ap-text-candidate-list-item a{ display:block;padding:4px 8px; }
+.ap-text-candidate-list-item a:hover{ cursor:pointer;background:#FAFAFA; }
+.ap-text-candidate-list-item a:active{ background:#F5F5F5; }
+.ap-text-candidate-list-item-selected a{ background:rgba(179, 86, 0, 0.33); }
+.ap-text-candidate-list-item-selected a:hover{ background:rgba(179, 86, 0, 0.5); }
+.ap-text-candidate-list-item-selected a:active{ background:rgba(179, 86, 0, 0.2); }</style><span class="ap-text-wrap"><input type="text" name="" placeholder="" class="ap-text" value="ban"/></span><span class="ap-text-wrap"><textarea name="" rows="6" placeholder="" class="ap-text ap-text-multiple">ban</textarea></span><span class="ap-text-wrap"><input type="text" name="" placeholder="" class="ap-text" value="ban"/></span></div></div></div></div></div><div class="react-demo-container"><div><pre class="react-demo-src"><div><style scoped="scoped">.syntaxhighlighter a,
+.syntaxhighlighter div,
+.syntaxhighlighter code,
+.syntaxhighlighter table,
+.syntaxhighlighter table td,
+.syntaxhighlighter table tr,
+.syntaxhighlighter table tbody,
+.syntaxhighlighter table thead,
+.syntaxhighlighter table caption,
+.syntaxhighlighter textarea {
+  -moz-border-radius: 0 0 0 0 !important;
+  -webkit-border-radius: 0 0 0 0 !important;
+  background: none !important;
+  border: 0 !important;
+  bottom: auto !important;
+  float: none !important;
+  height: auto !important;
+  left: auto !important;
+  line-height: 1.1em !important;
+  margin: 0 !important;
+  outline: 0 !important;
+  overflow: visible !important;
+  padding: 0 !important;
+  position: static !important;
+  right: auto !important;
+  text-align: left !important;
+  top: auto !important;
+  vertical-align: baseline !important;
+  width: auto !important;
+  box-sizing: content-box !important;
+  font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important;
+  font-weight: normal !important;
+  font-style: normal !important;
+  font-size: 1em !important;
+  min-height: inherit !important;
+  min-height: auto !important;
+}
+
+.syntaxhighlighter {
+  width: 100% !important;
+  margin: 1em 0 1em 0 !important;
+  position: relative !important;
+  overflow: auto !important;
+  font-size: 1em !important;
+}
+.syntaxhighlighter.source {
+  overflow: hidden !important;
+}
+.syntaxhighlighter .bold {
+  font-weight: bold !important;
+}
+.syntaxhighlighter .italic {
+  font-style: italic !important;
+}
+.syntaxhighlighter .line {
+  white-space: pre !important;
+}
+.syntaxhighlighter table {
+  width: 100% !important;
+}
+.syntaxhighlighter table caption {
+  text-align: left !important;
+  padding: .5em 0 0.5em 1em !important;
+}
+.syntaxhighlighter table td.code {
+  width: 100% !important;
+}
+.syntaxhighlighter table td.code .container {
+  position: relative !important;
+}
+.syntaxhighlighter table td.code .container textarea {
+  box-sizing: border-box !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  border: none !important;
+  background: white !important;
+  padding-left: 1em !important;
+  overflow: hidden !important;
+  white-space: pre !important;
+}
+.syntaxhighlighter table td.gutter .line {
+  text-align: right !important;
+  padding: 0 0.5em 0 1em !important;
+}
+.syntaxhighlighter table td.code .line {
+  padding: 0 1em !important;
+}
+.syntaxhighlighter.nogutter td.code .container textarea, .syntaxhighlighter.nogutter td.code .line {
+  padding-left: 0em !important;
+}
+.syntaxhighlighter.show {
+  display: block !important;
+}
+.syntaxhighlighter.collapsed table {
+  display: none !important;
+}
+.syntaxhighlighter.collapsed .toolbar {
+  padding: 0.1em 0.8em 0em 0.8em !important;
+  font-size: 1em !important;
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+}
+.syntaxhighlighter.collapsed .toolbar span {
+  display: inline !important;
+  margin-right: 1em !important;
+}
+.syntaxhighlighter.collapsed .toolbar span a {
+  padding: 0 !important;
+  display: none !important;
+}
+.syntaxhighlighter.collapsed .toolbar span a.expandSource {
+  display: inline !important;
+}
+.syntaxhighlighter .toolbar {
+  position: absolute !important;
+  right: 1px !important;
+  top: 1px !important;
+  width: 11px !important;
+  height: 11px !important;
+  font-size: 10px !important;
+  z-index: 10 !important;
+}
+.syntaxhighlighter .toolbar span.title {
+  display: inline !important;
+}
+.syntaxhighlighter .toolbar a {
+  display: block !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  padding-top: 1px !important;
+}
+.syntaxhighlighter .toolbar a.expandSource {
+  display: none !important;
+}
+.syntaxhighlighter.ie {
+  font-size: .9em !important;
+  padding: 1px 0 1px 0 !important;
+}
+.syntaxhighlighter.ie .toolbar {
+  line-height: 8px !important;
+}
+.syntaxhighlighter.ie .toolbar a {
+  padding-top: 0px !important;
+}
+.syntaxhighlighter.printing .line.alt1 .content,
+.syntaxhighlighter.printing .line.alt2 .content,
+.syntaxhighlighter.printing .line.highlighted .number,
+.syntaxhighlighter.printing .line.highlighted.alt1 .content,
+.syntaxhighlighter.printing .line.highlighted.alt2 .content {
+  background: none !important;
+}
+.syntaxhighlighter.printing .line .number {
+  color: #bbbbbb !important;
+}
+.syntaxhighlighter.printing .line .content {
+  color: black !important;
+}
+.syntaxhighlighter.printing .toolbar {
+  display: none !important;
+}
+.syntaxhighlighter.printing a {
+  text-decoration: none !important;
+}
+.syntaxhighlighter.printing .plain, .syntaxhighlighter.printing .plain a {
+  color: black !important;
+}
+.syntaxhighlighter.printing .comments, .syntaxhighlighter.printing .comments a {
+  color: #008200 !important;
+}
+.syntaxhighlighter.printing .string, .syntaxhighlighter.printing .string a {
+  color: blue !important;
+}
+.syntaxhighlighter.printing .keyword {
+  color: #006699 !important;
+  font-weight: bold !important;
+}
+.syntaxhighlighter.printing .preprocessor {
+  color: gray !important;
+}
+.syntaxhighlighter.printing .variable {
+  color: #aa7700 !important;
+}
+.syntaxhighlighter.printing .value {
+  color: #009900 !important;
+}
+.syntaxhighlighter.printing .functions {
+  color: #ff1493 !important;
+}
+.syntaxhighlighter.printing .constants {
+  color: #0066cc !important;
+}
+.syntaxhighlighter.printing .script {
+  font-weight: bold !important;
+}
+.syntaxhighlighter.printing .color1, .syntaxhighlighter.printing .color1 a {
+  color: gray !important;
+}
+.syntaxhighlighter.printing .color2, .syntaxhighlighter.printing .color2 a {
+  color: #ff1493 !important;
+}
+.syntaxhighlighter.printing .color3, .syntaxhighlighter.printing .color3 a {
+  color: red !important;
+}
+.syntaxhighlighter.printing .break, .syntaxhighlighter.printing .break a {
+  color: black !important;
+}
+
+.syntaxhighlighter {
+  background-color: white !important;
+}
+.syntaxhighlighter .line.alt1 {
+  background-color: white !important;
+}
+.syntaxhighlighter .line.alt2 {
+  background-color: white !important;
+}
+.syntaxhighlighter .line.highlighted.alt1, .syntaxhighlighter .line.highlighted.alt2 {
+  background-color: #e0e0e0 !important;
+}
+.syntaxhighlighter .line.highlighted.number {
+  color: black !important;
+}
+.syntaxhighlighter table caption {
+  color: black !important;
+}
+.syntaxhighlighter .gutter {
+  color: #afafaf !important;
+}
+.syntaxhighlighter .gutter .line {
+  border-right: 3px solid #6ce26c !important;
+}
+.syntaxhighlighter .gutter .line.highlighted {
+  background-color: #6ce26c !important;
+  color: white !important;
+}
+.syntaxhighlighter.printing .line .content {
+  border: none !important;
+}
+.syntaxhighlighter.collapsed {
+  overflow: visible !important;
+}
+.syntaxhighlighter.collapsed .toolbar {
+  color: blue !important;
+  background: white !important;
+  border: 1px solid #6ce26c !important;
+}
+.syntaxhighlighter.collapsed .toolbar a {
+  color: blue !important;
+}
+.syntaxhighlighter.collapsed .toolbar a:hover {
+  color: red !important;
+}
+.syntaxhighlighter .toolbar {
+  color: white !important;
+  background: #6ce26c !important;
+  border: none !important;
+}
+.syntaxhighlighter .toolbar a {
+  color: white !important;
+}
+.syntaxhighlighter .toolbar a:hover {
+  color: black !important;
+}
+.syntaxhighlighter .plain, .syntaxhighlighter .plain a {
+  color: black !important;
+}
+.syntaxhighlighter .comments, .syntaxhighlighter .comments a {
+  color: #008200 !important;
+}
+.syntaxhighlighter .string, .syntaxhighlighter .string a {
+  color: blue !important;
+}
+.syntaxhighlighter .keyword {
+  color: #006699 !important;
+}
+.syntaxhighlighter .preprocessor {
+  color: gray !important;
+}
+.syntaxhighlighter .variable {
+  color: #aa7700 !important;
+}
+.syntaxhighlighter .value {
+  color: #009900 !important;
+}
+.syntaxhighlighter .functions {
+  color: #ff1493 !important;
+}
+.syntaxhighlighter .constants {
+  color: #0066cc !important;
+}
+.syntaxhighlighter .script {
+  font-weight: bold !important;
+  color: #006699 !important;
+  background-color: none !important;
+}
+.syntaxhighlighter .color1, .syntaxhighlighter .color1 a {
+  color: gray !important;
+}
+.syntaxhighlighter .color2, .syntaxhighlighter .color2 a {
+  color: #ff1493 !important;
+}
+.syntaxhighlighter .color3, .syntaxhighlighter .color3 a {
+  color: red !important;
+}
+
+.syntaxhighlighter .keyword {
+  font-weight: bold !important;
+}
+</style><div id="highlighter_57393" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="string">'use strict'</code></div><div class="line number2 index1 alt1">&nbsp;</div><div class="line number3 index2 alt2"><code class="plain">import React from </code><code class="string">'react'</code></div><div class="line number4 index3 alt1"><code class="plain">import ApText from </code><code class="string">'../../lib/ap_text'</code></div><div class="line number5 index4 alt2"><code class="plain">import ApTextStyle from </code><code class="string">'../../lib/ap_text_style'</code></div><div class="line number6 index5 alt1">&nbsp;</div><div class="line number7 index6 alt2"><code class="plain">export </code><code class="keyword">default</code> <code class="plain">React.createClass({</code></div><div class="line number8 index7 alt1"><code class="undefined spaces">&nbsp;&nbsp;</code><code class="plain">getInitialState () {</code></div><div class="line number9 index8 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">return</code> <code class="plain">{</code></div><div class="line number10 index9 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">value: </code><code class="string">'ban'</code></div><div class="line number11 index10 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">}</code></div><div class="line number12 index11 alt1"><code class="undefined spaces">&nbsp;&nbsp;</code><code class="plain">},</code></div><div class="line number13 index12 alt2"><code class="undefined spaces">&nbsp;&nbsp;</code><code class="plain">handleChange (e) {</code></div><div class="line number14 index13 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">const s = </code><code class="keyword">this</code></div><div class="line number15 index14 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">s.setState({</code></div><div class="line number16 index15 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">value: e.target.value</code></div><div class="line number17 index16 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">})</code></div><div class="line number18 index17 alt1"><code class="undefined spaces">&nbsp;&nbsp;</code><code class="plain">},</code></div><div class="line number19 index18 alt2"><code class="undefined spaces">&nbsp;&nbsp;</code><code class="plain">render () {</code></div><div class="line number20 index19 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">const s = </code><code class="keyword">this</code></div><div class="line number21 index20 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">let { state } = s</code></div><div class="line number22 index21 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword">return</code> <code class="plain">(</code></div><div class="line number23 index22 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">&lt;</code><code class="keyword">div</code><code class="plain">></code></div><div class="line number24 index23 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">&lt;</code><code class="keyword">ApTextStyle</code> <code class="color1">highlightColor</code><code class="plain">=</code><code class="string">"#b35600"</code><code class="plain">/></code></div><div class="line number25 index24 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">&lt;</code><code class="keyword">ApText</code> <code class="plain">onChange={ s.handleChange } value={ state.value } onEnter={ () => console.log(</code><code class="string">'enter'</code><code class="plain">) }/></code></div><div class="line number26 index25 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">&lt;</code><code class="keyword">ApText</code> <code class="plain">onChange={ s.handleChange } value={ state.value } rows={ 6 }/></code></div><div class="line number27 index26 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">&lt;</code><code class="keyword">ApText</code> <code class="plain">onChange={ s.handleChange } value={ state.value }</code></div><div class="line number28 index27 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">candidates={ [ </code><code class="string">'banana'</code><code class="plain">, </code><code class="string">'orange'</code><code class="plain">, </code><code class="string">'apple'</code> <code class="plain">] }/></code></div><div class="line number29 index28 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">&lt;/</code><code class="keyword">div</code><code class="plain">></code></div><div class="line number30 index29 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">)</code></div><div class="line number31 index30 alt2"><code class="undefined spaces">&nbsp;&nbsp;</code><code class="plain">}</code></div><div class="line number32 index31 alt1"><code class="plain">})</code></div></div></td></tr></tbody></table></div></div></pre></div></div></main><footer><div class="react-demo-container"><ul class="ap-links"></ul></div></footer></body></html>

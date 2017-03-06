@@ -1,0 +1,16 @@
+{{#if vars.components}}Components
+-----
+
+{{#each vars.components}}
+
+### {{{@key}}}
+
+**Props**
+
+| Name | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+{{#each props}}
+| {{@key}} | {{type.name}} | {{defaultValue.value}} | | {{description}} |
+{{/each}}
+{{/each}}
+{{/if}}
