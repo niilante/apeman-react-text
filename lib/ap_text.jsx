@@ -42,6 +42,7 @@ class ApText extends Component {
       id,
       name,
       placeholder,
+      autoComplete,
       autoFocus,
       className,
       value,
@@ -70,7 +71,7 @@ class ApText extends Component {
 
     return (
       <span className={ classnames('ap-text-wrap', { 'ap-text-wrap-empty': !hasVal }) }>
-        <ApText.Text { ...{ id, name, value, placeholder, className, autoFocus, multiline, rows } }
+        <ApText.Text { ...{ id, name, value, placeholder, className, autoFocus, autoComplete, multiline, rows } }
                      handlers={ textHandlers }
         />
         <ApText.CandidateList { ...{ suggesting, candidates, selectedCandidate, multiline } }
@@ -204,7 +205,18 @@ class ApText extends Component {
   // --------------------
   // Static methods
   // --------------------
-  static Text ({ id, name, value, placeholder, className, autoFocus, multiline, handlers, rows }) {
+  static Text ({
+    id,
+    name,
+    value,
+    placeholder,
+    autoComplete,
+    className,
+    autoFocus,
+    multiline,
+    handlers,
+    rows
+  }) {
     if (multiline) {
       return (
         <textarea autoFocus={ autoFocus }
@@ -227,6 +239,7 @@ class ApText extends Component {
                placeholder={ placeholder }
                className={ classnames('ap-text', className)}
                value={ value }
+               autoComplete={ autoComplete }
                { ...handlers }
                type='text'
         />
